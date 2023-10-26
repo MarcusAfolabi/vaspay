@@ -10,7 +10,7 @@
         @endif
 
         @if (count($errors) > 0)
-            <!-- <div class="font-medium text-green-500">{{ __('Sorry, I found this errors.') }}</div> -->
+            <!-- <div class="font-medium text-purple-500">{{ __('Sorry, I found this errors.') }}</div> -->
             <ul class="text-sm text-red-600">
                 @foreach ($errors as $error)
                     <li>{{ $error }}</li>

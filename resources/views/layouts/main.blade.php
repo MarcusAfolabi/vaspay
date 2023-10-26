@@ -42,7 +42,7 @@
     <meta name="og:image" content="{{ asset('img/favicon/favicon.ico') }}">
     <meta name="og:url" content="@yield('canonical')">
     <meta name="og:site_name" content="@yield('title')">
-    <meta name="og:application-name" content="pCash">
+    <meta name="og:application-name" content="vaspay">
 
     <!-- preload css -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style">
@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="sm:bg-gray-50 bg-white">
+<body class="sm:bg-purple-50 bg-purple-50">
     <x-nav />
     <div class="flex ">
         <!-- Left container -->

@@ -5,7 +5,7 @@
 @section('canonical', config('app.url') . '/account/login')
 @section('content')
 
-<div class="flex-1 flex">
+<div class="flex-1 flex shadow-2xl">
     <div id="login-form" class="w-full bg-white rounded-3xl p-4">
         <!-- Login form here -->
         <div class="w-full bg-white rounded-3xl p-4">
@@ -76,11 +76,11 @@
                     <div class="sm:col-span-2">
                         <label for="password" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Password</label>
                         <div class="mt-2 relative">
-                            <input type="password" name="password" id="password" autocomplete="password" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter your password">
+                            <input type="password" name="password" id="password1" autocomplete="password" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter your password">
                             <p id="password-error" class="text-red-500 text-xs mt-1"></p>
                             <div class="absolute right-3 top-3">
-                                <button type="button" onclick="togglePasswordVisibility()" class="text-purple-400 hover:text-purple-600 focus:outline-none">
-                                    <span id="passwordToggleText" class="text-purple-500 font-medium">Show</span>
+                                <button type="button" onclick="togglePasswordVisibility1()" class="text-purple-400 hover:text-purple-600 focus:outline-none">
+                                    <span id="passwordToggleText1" class="text-purple-500 font-medium">Show</span>
                                 </button>
                             </div>
                             <x-validation-status class="mt-2 text-[8px] text-red-600 text-center font-bold" role="alert" />
@@ -128,6 +128,18 @@
     function togglePasswordVisibility() {
         const passwordInput = document.getElementById("password");
         const passwordToggleText = document.getElementById("passwordToggleText");
+
+        if (passwordInput.type === "password") {
+            passwordInput.setAttribute("type", "text");
+            passwordToggleText.textContent = "Hide";
+        } else {
+            passwordInput.setAttribute("type", "password");
+            passwordToggleText.textContent = "Show";
+        }
+    }
+    function togglePasswordVisibility1() {
+        const passwordInput = document.getElementById("password1");
+        const passwordToggleText = document.getElementById("passwordToggleText1");
 
         if (passwordInput.type === "password") {
             passwordInput.setAttribute("type", "text");

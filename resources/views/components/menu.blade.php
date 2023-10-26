@@ -3,14 +3,14 @@
         <div class="flex items-center justify-between h-0 md:h-16">
             <div class="hidden sm:flex flex-shrink-0">
                 <a href="{{ url('welcome') }}" class="flex items-center space-x-2">
-                    <img src="{{ asset('pcash.svg') }}" alt="pcash logo">
+                    <img src="{{ asset('vaspay.svg') }}" alt="vaspay logo">
                 </a>
             </div>
 
             <!-- Header Menu Items (Hidden on mobile) -->
             <div class="hidden sm:flex items-center justify-center flex-1 space-x-8">
                 @if(Request::routeIs('welcome'))
-                <a href="{{ url('welcome') }}" class="flex items-center space-x-2 text-green-500 font-semibold">
+                <a href="{{ url('welcome') }}" class="flex items-center space-x-2 text-purple-500 font-semibold">
                     <img class="h-6 w-6" src="{{ asset('img/menu_icon/home_filled.svg') }}" alt="About Icon">
                     <span>Home</span>
                 </a>
@@ -22,7 +22,7 @@
                 @endif
 
                 @if(Request::routeIs('about.*'))
-                <a href="{{ url('about') }}" class="flex items-center space-x-2 text-green-500 font-semibold">
+                <a href="{{ url('about') }}" class="flex items-center space-x-2 text-purple-500 font-semibold">
                     <img class="h-6 w-6" src="{{ asset('img/menu_icon/savings_filled.svg') }}" alt="Savings Icon">
                     <span>Reseller</span>
                 </a>
@@ -34,7 +34,7 @@
                 @endif
               
                 @if(Request::routeIs('vas.*'))
-                <a href="{{ url('vas') }}" class="flex items-center space-x-2 font-semibold text-green-500 ">
+                <a href="{{ url('vas') }}" class="flex items-center space-x-2 font-semibold text-purple-500 ">
                     <img class="h-6 w-6" src="{{ asset('img/menu_icon/vas_filled.svg') }}" alt="Savings Icon">
                     <span>VAS</span>
                 </a>
@@ -62,7 +62,7 @@
                 <a href="{{ route('account.index') }}" class="ml-4 text-gray-500 hover:text-gray-300">
                     <img src="{{ $loggedInUser['profile'] ?? asset('img/menu_icon/avater.svg') }}" class="w-10 h-10 rounded-full" alt="Avatar Icon">
                 </a>
-                <a href="{{ route('account.index') }}" class="ml-4 text-medium text-sm text-gray-500 hover:text-green-800">My account</a>
+                <a href="{{ route('account.index') }}" class="ml-4 text-medium text-sm text-gray-500 hover:text-purple-800">My account</a>
                 @endif
             </div>
         </div>

@@ -14,7 +14,7 @@
     <form method="POST" action="{{ route('account.login.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
         @csrf
         @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
+        <div class="mb-4 font-medium text-sm text-purple-600">
             {{ session('status') }}
         </div>
         @endif

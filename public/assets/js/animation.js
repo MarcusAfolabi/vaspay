@@ -121,7 +121,7 @@ function defineAnimationTimeline() {
 
       const piggy = document.getElementById("piggy_money");
       const piggy_div = document.getElementById("piggy_div");
-      const pCash_logo = document.getElementById("pCash_logo");
+      const vaspay_logo = document.getElementById("vaspay_logo");
       const taxi_left = document.getElementById("taxi_left");
       const sport_car = document.getElementById("sport_car");
       const shopping_bag = document.getElementById("shopping_bag");
@@ -150,8 +150,8 @@ function defineAnimationTimeline() {
                 duration: 0.6,
                 ease: "expo.in",
                 onComplete: function () {
-                  // fade in pcash logo
-                  gsap.to(pCash_logo, {
+                  // fade in vaspay logo
+                  gsap.to(vaspay_logo, {
                     opacity: 1,
                     duration: 0.4,
                     ease: "none",
@@ -182,7 +182,7 @@ function defineAnimationTimeline() {
                                     ease: "none",
                                     // switch the man image
                                     onComplete: function () {
-                                      pCash_logo.style.opacity = 0;
+                                      vaspay_logo.style.opacity = 0;
                                       piggy_div.style.opacity = 1;
                                       piggy.style.opacity = 0;
 
@@ -323,7 +323,7 @@ function defineAnimationTimeline() {
 
       const piggy = document.getElementById("piggy_money");
       const piggy_div = document.getElementById("piggy_div");
-      const pCash_logo = document.getElementById("pCash_logo");
+      const vaspay_logo = document.getElementById("vaspay_logo");
       const taxi_left = document.getElementById("taxi_left");
       const sport_car = document.getElementById("sport_car");
       const shopping_bag = document.getElementById("shopping_bag");
@@ -352,8 +352,8 @@ function defineAnimationTimeline() {
                 duration: 0.6,
                 ease: "expo.in",
                 onComplete: function () {
-                  // fade in pcash logo
-                  gsap.to(pCash_logo, {
+                  // fade in vaspay logo
+                  gsap.to(vaspay_logo, {
                     opacity: 1,
                     duration: 0.4,
                     ease: "none",
@@ -384,7 +384,7 @@ function defineAnimationTimeline() {
                                     ease: "none",
                                     // switch the man image
                                     onComplete: function () {
-                                      pCash_logo.style.opacity = 0;
+                                      vaspay_logo.style.opacity = 0;
                                       piggy_div.style.opacity = 1;
                                       piggy.style.opacity = 0;
 
@@ -524,7 +524,7 @@ function defineAnimationTimeline() {
 
       const piggy = document.getElementById("piggy_money");
       const piggy_div = document.getElementById("piggy_div");
-      const pCash_logo = document.getElementById("pCash_logo");
+      const vaspay_logo = document.getElementById("vaspay_logo");
       const taxi_left = document.getElementById("taxi_left");
       const sport_car = document.getElementById("sport_car");
       const shopping_bag = document.getElementById("shopping_bag");
@@ -553,8 +553,8 @@ function defineAnimationTimeline() {
                 duration: 0.6,
                 ease: "expo.in",
                 onComplete: function () {
-                  // fade in pcash logo
-                  gsap.to(pCash_logo, {
+                  // fade in vaspay logo
+                  gsap.to(vaspay_logo, {
                     opacity: 1,
                     duration: 0.4,
                     ease: "none",
@@ -585,7 +585,7 @@ function defineAnimationTimeline() {
                                     ease: "none",
                                     // switch the man image
                                     onComplete: function () {
-                                      pCash_logo.style.opacity = 0;
+                                      vaspay_logo.style.opacity = 0;
                                       piggy_div.style.opacity = 1;
                                       piggy.style.opacity = 0;
 

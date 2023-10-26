@@ -213,12 +213,12 @@ textarea {
   color: #FF0000 !important;
 }
 
-.text-green-500 {
+.text-purple-500 {
   color: #0DA75E !important;
 
 }
 
-.bg-green-500 {
+.bg-purple-500 {
   background-color: #0DA75E !important;
 }
 
@@ -226,7 +226,7 @@ textarea {
   background-color: #F2F2F2 !important;
 }
 
-.border-green-500 {
+.border-purple-500 {
   color: #0DA75E !important;
   /* border: none;   */
   outline: none;
@@ -334,11 +334,11 @@ a {
 
 }
 
-.text-green-500 {
+.text-purple-500 {
   color: #0DA75E;
 }
 
-.text-green-500 {
+.text-purple-500 {
   color: #0DA75E;
 }
 

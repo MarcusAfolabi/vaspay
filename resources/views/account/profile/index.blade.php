@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="grid grid-cols-2 gap-6 pb-2">
-        <div class="rounded-s-3xl bg-purple-500 pb-2">
+        <div class="rounded-s-3xl bg-purple-600 pb-2">
             <div class="flex flex-row justify-between">
                 <p class="text-gray-50 font-bold p-3">&nbsp; Wallet ID</p>
             </div>
@@ -31,7 +31,7 @@
                 </button>
             </div>
         </div>
-        <div class="rounded-r-3xl bg-purple-500 pb-2">
+        <div class="rounded-r-3xl bg-purple-600 pb-2">
             <div class="flex flex-row justify-between">
                 <p class="text-gray-50 font-bold p-3">Balance</p>
             </div>

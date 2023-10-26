@@ -12,7 +12,7 @@ Landing page
         <div style="background-color: #EBF6EE; " class="flex items-center justify-between w-full p-4 rounded-lg">
             <a href="#" class="flex items-center">
                 <h3 class="text-base font-medium">Earn rewards
-                    <p class="text-sm font-normal w-80 md:w-full mt-1">Invite your friends to pCash and earn big!</p>
+                    <p class="text-sm font-normal w-80 md:w-full mt-1">Invite your friends to vaspay and earn big!</p>
                 </h3>
             </a>
             <button id="reward" class="flex items-center">

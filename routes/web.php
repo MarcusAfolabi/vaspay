@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AirtimeController;
  
 
 Route::get('/', function () {
@@ -20,7 +22,7 @@ Route::get('/vas', function () {
 });
 
  
-Route::prefix('account')->name('account.')->group(function () {
+Route::name('account.')->group(function () {
     Route::get('/profile', [AccountController::class, 'index'])->name('index');
     Route::get('/profile-edit', [AccountController::class, 'edit'])->name('edit');
     Route::get('/profile-logout', [AccountController::class, 'logout'])->name('logout');
@@ -33,3 +35,10 @@ Route::prefix('account')->name('account.')->group(function () {
     Route::post('register', [AccountController::class, 'postRegister'])->name('register.post');
 });
 
+Route::prefix('airtime.')->group(function () {
+    Route::get('/', [AirtimeController::class, 'index'])->name('index.airtime');
+});
+
+Route::prefix('data.')->group(function () {
+    Route::get('/', [DataController::class, 'index'])->name('index.data');
+});

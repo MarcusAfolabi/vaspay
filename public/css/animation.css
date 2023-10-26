@@ -72,7 +72,7 @@
 
 
 .piggy_div,
-.pCash_logo {
+.vaspay_logo {
     position: absolute;
     width: 5.33vw;
     height: 5.33vw;
@@ -84,7 +84,7 @@
     overflow: hidden;
 }
 
-.pCash_logo {
+.vaspay_logo {
     background-color: #fff;
     opacity: 0;
 }
@@ -175,7 +175,7 @@
 
 
     .piggy_div,
-    .pCash_logo {
+    .vaspay_logo {
         position: absolute;
         width: 9.99vw;
         height: 9.99vw;
@@ -273,7 +273,7 @@
 
 
     .piggy_div,
-    .pCash_logo {
+    .vaspay_logo {
         position: absolute;
         width: 7.50vw;
         height: 7.50vw;
