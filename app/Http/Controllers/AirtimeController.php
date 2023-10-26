@@ -14,7 +14,7 @@ class AirtimeController extends Controller
     
     public function index()
     {
-        return view("airtime.index");
+        return view("vas.airtime.index");
     }
 
     

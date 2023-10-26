@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Data;
+use App\Models\Electricity;
 use Illuminate\Http\Request;
 
-class DataController extends Controller
+class ElectricityController extends Controller
 {
+   
     public function __construct()
     {
         $this->middleware(['auth','verified']);
@@ -14,10 +15,12 @@ class DataController extends Controller
     
     public function index()
     {
-        return view("vas.data.index");
+        return view("vas.electricity.index");
     }
 
-    
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         //
@@ -34,7 +37,7 @@ class DataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Data $data)
+    public function show(Electricity $electricity)
     {
         //
     }
@@ -42,7 +45,7 @@ class DataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Data $data)
+    public function edit(Electricity $electricity)
     {
         //
     }
@@ -50,7 +53,7 @@ class DataController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Data $data)
+    public function update(Request $request, Electricity $electricity)
     {
         //
     }
@@ -58,7 +61,7 @@ class DataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Data $data)
+    public function destroy(Electricity $electricity)
     {
         //
     }

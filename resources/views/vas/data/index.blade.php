@@ -46,16 +46,16 @@
 
             oneTimeButton.classList.add('border-b-2', 'border-green-500');
             autoRenewalButton.classList.remove('border-b-2', 'border-green-500');
-            oneTimeButton.classList.remove('bg-gray-200', 'text-gray-500');
-            autoRenewalButton.classList.add('bg-gray-200', 'text-gray-500');
+            oneTimeButton.classList.remove('bg-purple-200', 'text-purple-500');
+            autoRenewalButton.classList.add('bg-purple-200', 'text-purple-500');
         } else if (section === 'auto') {
             oneSection.classList.add('hidden');
             autoSection.classList.remove('hidden');
 
             oneTimeButton.classList.remove('border-b-2', 'border-green-500');
             autoRenewalButton.classList.add('border-b-2', 'border-green-500');
-            oneTimeButton.classList.add('bg-gray-200', 'text-gray-500');
-            autoRenewalButton.classList.remove('bg-gray-200', 'text-gray-500');
+            oneTimeButton.classList.add('bg-purple-200', 'text-purple-500');
+            autoRenewalButton.classList.remove('bg-purple-200', 'text-purple-500');
         }
     }
 

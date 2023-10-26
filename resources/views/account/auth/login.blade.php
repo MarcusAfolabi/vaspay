@@ -18,14 +18,14 @@
                     <div class="sm:col-span-2">
                         <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Email</label>
                         <div class="mt-2">
-                            <input type="email" name="email" id="email" autocomplete="email" value="{{ old('email') }}" name="email" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter email">
+                            <input type="email" name="email" required id="email" autocomplete="email" value="{{ old('email') }}" name="email" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter email">
 
                         </div>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="password" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Password</label>
                         <div class="mt-2 relative">
-                            <input type="password" name="password" id="password" autocomplete="password" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter password">
+                            <input type="password" name="password" required id="password" autocomplete="password" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter password">
                             <p id="password-error" class="text-red-500 text-xs mt-1"></p>
                             <div class="absolute right-3 top-3">
                                 <button type="button" onclick="togglePasswordVisibility()" class="text-purple-400 hover:text-purple-600 focus:outline-none">
@@ -62,7 +62,7 @@
                     <div class="sm:col-span-2">
                         <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Phone no</label>
                         <div class="mt-2">
-                            <input type="tel" name="phone" id="phone" autocomplete="phone" value="{{ old('phone') }}" pattern="^0(?:70|71|80|81|90|91)[0-9]{8}$" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter phone no">
+                            <input type="tel" name="phone" id="phone" maxlength="11" autocomplete="phone" value="{{ old('phone') }}" pattern="^0(?:70|71|80|81|90|91)[0-9]{8}$" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter phone no">
 
                         </div>
                     </div>

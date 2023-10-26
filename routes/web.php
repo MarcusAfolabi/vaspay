@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CableController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AirtimeController;
+use App\Http\Controllers\ElectricityController;
  
 
 Route::get('/', function () {
@@ -41,4 +43,12 @@ Route::prefix('airtime.')->group(function () {
 
 Route::prefix('data.')->group(function () {
     Route::get('/', [DataController::class, 'index'])->name('index.data');
+});
+
+Route::prefix('cable.')->group(function () {
+    Route::get('/', [CableController::class, 'index'])->name('index.cable');
+});
+
+Route::prefix('electricity.')->group(function () {
+    Route::get('/', [ElectricityController::class, 'index'])->name('index.electricity');
 });
