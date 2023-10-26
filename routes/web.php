@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CableController;
 use App\Http\Controllers\AccountController;
@@ -51,4 +52,8 @@ Route::prefix('cable.')->group(function () {
 
 Route::prefix('electricity.')->group(function () {
     Route::get('/', [ElectricityController::class, 'index'])->name('index.electricity');
+});
+
+Route::prefix('exam.')->group(function () {
+    Route::get('/', [ExamController::class, 'index'])->name('index.exam');
 });
