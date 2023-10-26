@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="format-detection" content="telephone=yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="author" content="Novajii Introserve">
+    <meta name="author" content="Webshop Technology">
     <meta name="keywords" content="@yield('keywords')">
     <meta name="description" content="@yield('description')" />
     <meta name="canonical" content="@yield('canonical')" />

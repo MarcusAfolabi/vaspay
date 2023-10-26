@@ -16,9 +16,9 @@
                 @csrf
                 <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div class="sm:col-span-2">
-                        <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Phone no</label>
+                        <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Email</label>
                         <div class="mt-2">
-                            <input type="tel" name="password" id="password" autocomplete="phone" value="{{ old('mobile_no') }}" name="mobile_no" pattern="^0(?:70|71|80|81|90|91)[0-9]{8}$" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter phone no">
+                            <input type="email" name="email" id="email" autocomplete="email" value="{{ old('email') }}" name="email" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter email">
 
                         </div>
                     </div>
