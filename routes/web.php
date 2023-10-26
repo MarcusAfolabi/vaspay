@@ -33,7 +33,6 @@ Route::name('account.')->group(function () {
     Route::get('register', [AccountController::class, 'register'])->name('register');
     Route::get('forgot-password', [AccountController::class, 'forgotPassword'])->name('forgot-password');
     Route::get('reset-password', [AccountController::class, 'resetPassword'])->name('reset-password');
-
     Route::post('login', [AccountController::class, 'postLogin'])->name('login.post');
     Route::post('register', [AccountController::class, 'postRegister'])->name('register.post');
 });
