@@ -7,28 +7,22 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+   
+    public function login()
     {
-        //
+        return view("account.auth.login");
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+  
+    public function forgotPassword(Request $request)
     {
-        //
+        return view("account.auth.forgot-password");
+        
     }
 
     /**

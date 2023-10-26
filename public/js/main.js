@@ -81,33 +81,7 @@ $(document).ready(function () {
     currentImage.addClass('active');
   });
 });
-
-
-function togglePasswordVisibility() {
-  const passwordInput = document.getElementById("password");
-  const passwordToggleText = document.getElementById("passwordToggleText");
-
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    passwordToggleText.textContent = "Hide";
-  } else {
-    passwordInput.type = "password";
-    passwordToggleText.textContent = "Show";
-  }
-}
-
-function togglePasswordVisibility2() {
-  const passwordInput = document.getElementById("password2");
-  const passwordToggleText = document.getElementById("passwordToggleText2");
-
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    passwordToggleText.textContent = "Hide";
-  } else {
-    passwordInput.type = "password";
-    passwordToggleText.textContent = "Show";
-  }
-}
+ 
 
 
 function validatePassword() {

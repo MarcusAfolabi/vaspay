@@ -17,6 +17,14 @@ Route::get('/vas', function () {
 });
 
  
+Route::prefix('account')->name('account.')->group(function () {
+    Route::get('/', [AccountController::class, 'index'])->name('index');
+    Route::get('login', [AccountController::class, 'login'])->name('login');
+    Route::get('register', [AccountController::class, 'register'])->name('register');
+    Route::get('forgot-password', [AccountController::class, 'forgotPassword'])->name('forgot-password');
+    Route::get('reset-password', [AccountController::class, 'resetPassword'])->name('reset-password');
 
+    Route::post('login', [AccountController::class, 'postLogin'])->name('login.post');
+    Route::post('register', [AccountController::class, 'postRegister'])->name('register.post');
+});
 
-Route::get('/account', [AccountController::class, 'index'])->name('account.index');

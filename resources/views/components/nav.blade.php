@@ -1,7 +1,8 @@
 <nav class="bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-0 md:h-16">
-            <div class="hidden sm:flex flex-shrink-0">
+ 
+            <div class="sm:flex flex-shrink-0">
                 <a href="{{ url('welcome') }}" class="flex items-center space-x-2">
                     <img src="{{ asset('pcash.svg') }}" alt="pcash logo">
                 </a>
