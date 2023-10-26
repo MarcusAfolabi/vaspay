@@ -1,142 +1,123 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.main')
+@section('title', 'Value Added Services')
+@section('description', 'The best way to save and investEarn up to 10% interest on your savings')
+@section('keywords', 'save, invest, earn, interest, savings, low interest rate, loan, loan app, borrowing, app, mobile loan app, financial, finance, money, lending, credit, borrowing, repayment, financial management, personal finance')
+@section('canonical', config('app.url') . '/vas')
+@section('content')
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<div class="">
+    <!-- <h3 class="text-2xl mt-0 md:mt-12 font-medium">Value Added Services</h3> -->
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-          @vite('resources/css/app.css')
+    <div class="grid  grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6">
 
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+        <a href="#" class="rounded-lg py-4 px-4 overflow-hidden bg-amber-100">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25H11.9692H11.9692C10.8294 1.25 9.93146 1.24999 9.20713 1.30484C8.46847 1.36078 7.84953 1.4769 7.28125 1.74189C6.16261 2.26352 5.26352 3.16261 4.74189 4.28125C4.4769 4.84953 4.36078 5.46847 4.30484 6.20713C4.24999 6.93146 4.25 7.82939 4.25 8.96919V8.96922V9V15V15.0308V15.0308C4.25 16.1706 4.24999 17.0685 4.30484 17.7929C4.36078 18.5315 4.4769 19.1505 4.74189 19.7187C5.26352 20.8374 6.16261 21.7365 7.28125 22.2581C7.84953 22.5231 8.46847 22.6392 9.20713 22.6952C9.93145 22.75 10.8294 22.75 11.9691 22.75H11.9692H12H12.0308H12.0309C13.1706 22.75 14.0686 22.75 14.7929 22.6952C15.5315 22.6392 16.1505 22.5231 16.7187 22.2581C17.8374 21.7365 18.7365 20.8374 19.2581 19.7187C19.5231 19.1505 19.6392 18.5315 19.6952 17.7929C19.75 17.0685 19.75 16.1706 19.75 15.0308V15V9V8.96923C19.75 7.82941 19.75 6.93147 19.6952 6.20713C19.6392 5.46847 19.5231 4.84953 19.2581 4.28125C18.7365 3.16261 17.8374 2.26352 16.7187 1.74189C16.1505 1.4769 15.5315 1.36078 14.7929 1.30484C14.0685 1.24999 13.1706 1.25 12.0308 1.25H12.0308H12ZM7.91518 3.10135C8.25107 2.94472 8.66714 2.85003 9.32039 2.80056C9.98146 2.7505 10.8227 2.75 12 2.75C13.1773 2.75 14.0185 2.7505 14.6796 2.80056C15.3329 2.85003 15.7489 2.94472 16.0848 3.10135C16.8839 3.47394 17.5261 4.11615 17.8987 4.91518C18.0553 5.25107 18.15 5.66714 18.1994 6.32039C18.2495 6.98146 18.25 7.82269 18.25 9V15C18.25 16.1773 18.2495 17.0185 18.1994 17.6796C18.15 18.3329 18.0553 18.7489 17.8987 19.0848C17.5261 19.8839 16.8839 20.5261 16.0848 20.8987C15.7489 21.0553 15.3329 21.15 14.6796 21.1994C14.0185 21.2495 13.1773 21.25 12 21.25C10.8227 21.25 9.98146 21.2495 9.32039 21.1994C8.66714 21.15 8.25107 21.0553 7.91518 20.8987C7.11615 20.5261 6.47394 19.8839 6.10135 19.0848C5.94472 18.7489 5.85003 18.3329 5.80056 17.6796C5.7505 17.0185 5.75 16.1773 5.75 15V9C5.75 7.82269 5.7505 6.98146 5.80056 6.32039C5.85003 5.66714 5.94472 5.25107 6.10135 4.91518C6.47394 4.11615 7.11615 3.47394 7.91518 3.10135ZM12 15.5C11.1716 15.5 10.5 16.1716 10.5 17C10.5 17.8284 11.1716 18.5 12 18.5C12.8284 18.5 13.5 17.8284 13.5 17C13.5 16.1716 12.8284 15.5 12 15.5Z" fill="#B75C1A" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-amber-700 font-medium">Buy Airtime</h4>
+            <p class="mt-2 text-sm text-gray-800">Recharge any phone number</p>
+        </a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
+        <a href="#" class="rounded-lg py-4 px-4 overflow-hidden bg-emerald-50">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.7436 9.46337C21.9995 9.78907 22.471 9.84565 22.7967 9.58974C23.1224 9.33383 23.179 8.86234 22.9231 8.53663C20.2924 5.18845 16.6204 3.25 12.3333 3.25C8.04627 3.25 4.3743 5.18845 1.74359 8.53663C1.48768 8.86234 1.54426 9.33383 1.86996 9.58974C2.19566 9.84565 2.66715 9.78907 2.92307 9.46337C5.29235 6.44791 8.54248 4.75 12.3333 4.75C16.1242 4.75 19.3743 6.44791 21.7436 9.46337ZM12.3333 18C11.781 18 11.3333 18.4477 11.3333 19C11.3333 19.5523 11.781 20 12.3333 20H12.3433C12.8956 20 13.3433 19.5523 13.3433 19C13.3433 18.4477 12.8956 18 12.3433 18H12.3333ZM19.8401 12.5529C19.5348 12.8328 19.0604 12.8121 18.7805 12.5068C17.1761 10.7565 14.9557 9.75 12.3333 9.75C9.71099 9.75 7.49059 10.7565 5.88619 12.5068C5.6063 12.8121 5.13187 12.8328 4.82653 12.5529C4.52119 12.273 4.50057 11.7985 4.78046 11.4932C6.67606 9.42528 9.30113 8.25 12.3333 8.25C15.3655 8.25 17.9906 9.42528 19.8862 11.4932C20.1661 11.7985 20.1455 12.273 19.8401 12.5529ZM14.8481 15.5719C15.1639 15.8399 15.6372 15.8011 15.9052 15.4852C16.1732 15.1694 16.1344 14.6961 15.8186 14.4281C14.9125 13.6594 13.6939 13.25 12.3333 13.25C10.9728 13.25 9.75411 13.6594 8.84809 14.4281C8.53225 14.6961 8.49346 15.1694 8.76144 15.4852C9.02943 15.8011 9.50272 15.8399 9.81856 15.5719C10.4125 15.0679 11.2705 14.75 12.3333 14.75C13.3961 14.75 14.2541 15.0679 14.8481 15.5719Z" fill="#0DA75E" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-emerald-600 font-medium">Buy Data</h4>
+            <p class="mt-2 text-sm text-gray-800">Get data in the fastest way possible</p>
+        </a>
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
+        <a href="#" class=" py-4 px-5 rounded-xl overflow-hidden bg-blue-900 bg-opacity-10">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0074 3.47955C12.5059 3.96776 11.8748 4.76834 10.9692 5.9208L7.30716 10.5816C6.62828 11.4457 6.17365 12.0275 5.91699 12.4748C5.7919 12.6929 5.74364 12.8301 5.72863 12.912C5.71771 12.9716 5.72593 12.9879 5.73018 12.9963C5.73044 12.9968 5.73068 12.9973 5.7309 12.9978C5.73113 12.9982 5.73135 12.9987 5.73159 12.9992C5.73558 13.0078 5.74329 13.0243 5.79691 13.0525C5.87061 13.0913 6.00831 13.1381 6.25705 13.1745C6.76741 13.2491 7.50576 13.251 8.60459 13.251H9.66667C9.6781 13.251 9.68958 13.251 9.70112 13.251C9.90623 13.251 10.128 13.2509 10.3152 13.276C10.5346 13.3055 10.8148 13.3814 11.0506 13.6172C11.2864 13.853 11.3622 14.1332 11.3917 14.3525C11.4169 14.5397 11.4168 14.7615 11.4167 14.9666C11.4167 14.9781 11.4167 14.9896 11.4167 15.001V17.0619C11.4167 18.5275 11.4183 19.547 11.511 20.2407C11.5571 20.5853 11.6183 20.7823 11.6735 20.889C11.6983 20.9369 11.7154 20.9536 11.7181 20.9562C11.7182 20.9562 11.7183 20.9563 11.7182 20.9563C11.7185 20.9564 11.7189 20.9565 11.7196 20.9567C11.7226 20.9578 11.7203 20.9572 11.7211 20.9572C11.7248 20.9569 11.7486 20.9543 11.7976 20.932C11.907 20.8822 12.0768 20.7651 12.326 20.5225C12.8275 20.0343 13.4586 19.2338 14.3641 18.0813L18.0262 13.4205C18.7051 12.5564 19.1597 11.9746 19.4164 11.5273C19.5414 11.3092 19.5897 11.172 19.6047 11.0901C19.6156 11.0305 19.6074 11.0142 19.6032 11.0058C19.6029 11.0053 19.6027 11.0048 19.6024 11.0043C19.6022 11.0039 19.602 11.0034 19.6018 11.0029C19.5978 10.9943 19.5901 10.9778 19.5364 10.9496C19.4627 10.9108 19.325 10.8639 19.0763 10.8276C18.5659 10.753 17.8276 10.751 16.7288 10.751H15.6667C15.6553 10.751 15.6438 10.7511 15.6322 10.7511C15.4271 10.7511 15.2053 10.7512 15.0181 10.7261C14.7988 10.6966 14.5186 10.6207 14.2828 10.3849C14.047 10.1491 13.9712 9.86894 13.9417 9.64962C13.9165 9.4624 13.9166 9.2406 13.9167 9.03549C13.9167 9.02395 13.9167 9.01247 13.9167 9.00105V6.94021C13.9167 5.47456 13.915 4.45512 13.8223 3.7614C13.7763 3.41675 13.7151 3.21977 13.6598 3.11307C13.635 3.06516 13.6179 3.04847 13.6152 3.04593C13.6147 3.04541 13.6167 3.04637 13.6138 3.04535C13.6108 3.04432 13.613 3.04485 13.6123 3.04491C13.6086 3.04522 13.5848 3.04779 13.5357 3.07014C13.4264 3.11992 13.2565 3.237 13.0074 3.47955ZM11.961 2.40476C12.5075 1.87278 13.242 1.32959 14.1041 1.62774C14.9661 1.92589 15.2081 2.80683 15.3091 3.56273C15.4167 4.36815 15.4167 5.48915 15.4167 6.87729V6.94021V9.00105C15.4167 9.10012 15.4167 9.18044 15.4178 9.24989C15.4873 9.25101 15.5676 9.25105 15.6667 9.25105H16.7288L16.7914 9.25104C17.8114 9.25101 18.6611 9.25097 19.2932 9.34336C19.9298 9.4364 20.6165 9.65939 20.9515 10.3486C21.2865 11.0379 21.0376 11.7156 20.7175 12.2737C20.3996 12.8278 19.8745 13.4959 19.2444 14.2979L19.2057 14.3472L15.5436 19.008L15.5047 19.0575C14.6471 20.149 13.9545 21.0305 13.3723 21.5973C12.8259 22.1293 12.0913 22.6725 11.2103 22.3744C10.3672 22.0762 10.1253 21.1953 10.0243 20.4394C9.91663 19.6339 9.91665 18.5129 9.91667 17.1248L9.91667 17.0619V15.001C9.91667 14.902 9.91664 14.8217 9.91552 14.7522C9.84607 14.7511 9.76575 14.751 9.66667 14.751H8.60459L8.54191 14.751C7.52199 14.7511 6.67226 14.7511 6.04013 14.6587C5.40354 14.5657 4.71681 14.3427 4.38181 13.6535C4.04682 12.9642 4.29575 12.2865 4.6159 11.7284C4.93379 11.1743 5.4588 10.5061 6.08896 9.7042L6.12768 9.65491L9.78977 4.99407L9.82864 4.9446C10.6862 3.85306 11.3788 2.97159 11.961 2.40476Z" fill="#00398E" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-blue-800 font-medium">Electricity & Water</h4>
+            <p class="mt-2 text-sm text-gray-800">
+                Pay for your power & water usage easily
+            </p>
+        </a>
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
+        <a href="#" class="rounded-lg py-4 px-4 overflow-hidden bg-fuchsia-800 bg-opacity-10">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.46967 0.46967C7.76256 0.176777 8.23744 0.176777 8.53033 0.46967L12 3.93934L15.4697 0.46967C15.7626 0.176777 16.2374 0.176777 16.5303 0.46967C16.8232 0.762563 16.8232 1.23744 16.5303 1.53033L13.8107 4.25H13.8333C15.0652 4.24999 16.0357 4.24999 16.8167 4.3138C17.6134 4.3789 18.2788 4.51413 18.8835 4.82222C19.8713 5.32555 20.6744 6.1287 21.1778 7.11655C21.4859 7.7212 21.6211 8.38657 21.6862 9.18333C21.75 9.96432 21.75 10.9348 21.75 12.1667V12.2V14.8V14.8333C21.75 16.0652 21.75 17.0357 21.6862 17.8167C21.6211 18.6134 21.4859 19.2788 21.1778 19.8834C20.6744 20.8713 19.8713 21.6744 18.8835 22.1778C18.2788 22.4859 17.6134 22.6211 16.8167 22.6862C16.0357 22.75 15.0652 22.75 13.8333 22.75H13.8H10.2H10.1667C8.93477 22.75 7.96432 22.75 7.18333 22.6862C6.38657 22.6211 5.7212 22.4859 5.11655 22.1778C4.1287 21.6744 3.32555 20.8713 2.82222 19.8834C2.51413 19.2788 2.3789 18.6134 2.3138 17.8167C2.24999 17.0357 2.24999 16.0652 2.25 14.8333V14.8V12.2V12.1667C2.24999 10.9348 2.24999 9.96432 2.3138 9.18333C2.3789 8.38657 2.51413 7.7212 2.82222 7.11655C3.32555 6.1287 4.1287 5.32555 5.11655 4.82222C5.7212 4.51413 6.38657 4.3789 7.18333 4.3138C7.96432 4.24999 8.93478 4.24999 10.1667 4.25H10.1893L7.46967 1.53033C7.17678 1.23744 7.17678 0.762563 7.46967 0.46967ZM7.30548 5.80882C6.60148 5.86634 6.15549 5.97634 5.79754 6.15873C5.09193 6.51825 4.51825 7.09193 4.15873 7.79754C3.97634 8.15549 3.86634 8.60148 3.80882 9.30548C3.75058 10.0182 3.75 10.9275 3.75 12.2V14.8C3.75 16.0725 3.75058 16.9818 3.80882 17.6945C3.86634 18.3985 3.97634 18.8445 4.15873 19.2025C4.51825 19.9081 5.09193 20.4818 5.79754 20.8413C6.15549 21.0237 6.60148 21.1337 7.30548 21.1912C8.01824 21.2494 8.92751 21.25 10.2 21.25H13.8C15.0725 21.25 15.9818 21.2494 16.6945 21.1912C17.3985 21.1337 17.8445 21.0237 18.2025 20.8413C18.9081 20.4818 19.4817 19.9081 19.8413 19.2025C20.0237 18.8445 20.1337 18.3985 20.1912 17.6945C20.2494 16.9818 20.25 16.0725 20.25 14.8V12.2C20.25 10.9275 20.2494 10.0182 20.1912 9.30548C20.1337 8.60148 20.0237 8.15549 19.8413 7.79754C19.4817 7.09193 18.9081 6.51825 18.2025 6.15873C17.8445 5.97634 17.3985 5.86634 16.6945 5.80882C15.9818 5.75058 15.0725 5.75 13.8 5.75H10.2C8.92751 5.75 8.01824 5.75058 7.30548 5.80882ZM13.6876 10.3669C13.6408 10.1074 13.4612 9.89157 13.2145 9.79839C12.9679 9.70521 12.6904 9.74841 12.4837 9.91217L6.53421 14.6265C6.20957 14.8837 6.15492 15.3554 6.41217 15.6801C6.66942 16.0047 7.14114 16.0594 7.46579 15.8021L12.4336 11.8657L13.2931 16.6331C13.3427 16.9078 13.5407 17.1323 13.8071 17.2157C14.0735 17.2992 14.3642 17.2277 14.5616 17.0303L17.0616 14.5303C17.3545 14.2374 17.3545 13.7626 17.0616 13.4697C16.7687 13.1768 16.2938 13.1768 16.0009 13.4697L14.5149 14.9557L13.6876 10.3669Z" fill="#7D0890" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-fuchsia-800 font-medium">Cable TV</h4>
+            <p class="mt-2 text-sm text-gray-800">
+                Top up your cable TV subscription
+            </p>
+        </a>
+        <a href="#" class="rounded-lg py-4 px-4 overflow-hidden bg-pink-800 bg-opacity-10">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.13 3.75C15.4025 3.75 16.3118 3.75058 17.0245 3.80882C17.7285 3.86634 18.1745 3.97634 18.5325 4.15873C19.2381 4.51825 19.8118 5.09193 20.1713 5.79754C20.3537 6.15549 20.4637 6.60148 20.5212 7.30548C20.5794 8.01824 20.58 8.92751 20.58 10.2V17C20.58 18.7949 19.1249 20.25 17.33 20.25H16.33H15.58V21.75H16.33H17.33C19.9534 21.75 22.08 19.6234 22.08 17V10.2V10.1667C22.08 8.93477 22.08 7.96431 22.0162 7.18333C21.9511 6.38657 21.8159 5.7212 21.5078 5.11655C21.0045 4.1287 20.2013 3.32555 19.2135 2.82222C18.6088 2.51413 17.9434 2.3789 17.1467 2.3138C16.3657 2.24999 15.3952 2.24999 14.1633 2.25H14.13H7.33C4.70665 2.25 2.58 4.37665 2.58 7V8V8.75H4.08V8V7C4.08 5.20507 5.53508 3.75 7.33 3.75H14.13ZM3.33 20C2.77772 20 2.33 20.4477 2.33 21C2.33 21.5523 2.77772 22 3.33 22H3.34042C3.8927 22 4.34042 21.5523 4.34042 21C4.34042 20.4477 3.8927 20 3.34042 20H3.33ZM2.58 17C2.58 16.5858 2.91579 16.25 3.33 16.25C5.95335 16.25 8.08 18.3766 8.08 21C8.08 21.4142 7.74422 21.75 7.33 21.75C6.91579 21.75 6.58 21.4142 6.58 21C6.58 19.2051 5.12493 17.75 3.33 17.75C2.91579 17.75 2.58 17.4142 2.58 17ZM3.33 12.25C2.91579 12.25 2.58 12.5858 2.58 13C2.58 13.4142 2.91579 13.75 3.33 13.75C7.33407 13.75 10.58 16.9959 10.58 21C10.58 21.4142 10.9158 21.75 11.33 21.75C11.7442 21.75 12.08 21.4142 12.08 21C12.08 16.1675 8.16249 12.25 3.33 12.25Z" fill="#FF0000" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-red-600 font-medium">Inter. Airtime</h4>
+            <p class="mt-1 text-sm text-gray-800 ">
+                Buy airtime for friends and family in abroad
+            </p>
+        </a>
+        <a href="#" class="rounded-lg py-4 px-4 overflow-hidden bg-red-500 bg-opacity-10">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.13 3.75C15.4025 3.75 16.3118 3.75058 17.0245 3.80882C17.7285 3.86634 18.1745 3.97634 18.5325 4.15873C19.2381 4.51825 19.8118 5.09193 20.1713 5.79754C20.3537 6.15549 20.4637 6.60148 20.5212 7.30548C20.5794 8.01824 20.58 8.92751 20.58 10.2V17C20.58 18.7949 19.1249 20.25 17.33 20.25H16.33H15.58V21.75H16.33H17.33C19.9534 21.75 22.08 19.6234 22.08 17V10.2V10.1667C22.08 8.93477 22.08 7.96431 22.0162 7.18333C21.9511 6.38657 21.8159 5.7212 21.5078 5.11655C21.0045 4.1287 20.2013 3.32555 19.2135 2.82222C18.6088 2.51413 17.9434 2.3789 17.1467 2.3138C16.3657 2.24999 15.3952 2.24999 14.1633 2.25H14.13H7.33C4.70665 2.25 2.58 4.37665 2.58 7V8V8.75H4.08V8V7C4.08 5.20507 5.53508 3.75 7.33 3.75H14.13ZM3.33 20C2.77772 20 2.33 20.4477 2.33 21C2.33 21.5523 2.77772 22 3.33 22H3.34042C3.8927 22 4.34042 21.5523 4.34042 21C4.34042 20.4477 3.8927 20 3.34042 20H3.33ZM2.58 17C2.58 16.5858 2.91579 16.25 3.33 16.25C5.95335 16.25 8.08 18.3766 8.08 21C8.08 21.4142 7.74422 21.75 7.33 21.75C6.91579 21.75 6.58 21.4142 6.58 21C6.58 19.2051 5.12493 17.75 3.33 17.75C2.91579 17.75 2.58 17.4142 2.58 17ZM3.33 12.25C2.91579 12.25 2.58 12.5858 2.58 13C2.58 13.4142 2.91579 13.75 3.33 13.75C7.33407 13.75 10.58 16.9959 10.58 21C10.58 21.4142 10.9158 21.75 11.33 21.75C11.7442 21.75 12.08 21.4142 12.08 21C12.08 16.1675 8.16249 12.25 3.33 12.25Z" fill="#FF0000" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-red-500 font-medium">Swap Currency</h4>
+            <p class="mt-1 text-sm text-gray-800 ">
+                Coming soon
+            </p>
+        </a>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
+        <a href="#" class="rounded-lg py-4 col-span-2 lg:col-span-1 px-4 overflow-hidden bg-orange-50">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.13 3.75C15.4025 3.75 16.3118 3.75058 17.0245 3.80882C17.7285 3.86634 18.1745 3.97634 18.5325 4.15873C19.2381 4.51825 19.8118 5.09193 20.1713 5.79754C20.3537 6.15549 20.4637 6.60148 20.5212 7.30548C20.5794 8.01824 20.58 8.92751 20.58 10.2V17C20.58 18.7949 19.1249 20.25 17.33 20.25H16.33H15.58V21.75H16.33H17.33C19.9534 21.75 22.08 19.6234 22.08 17V10.2V10.1667C22.08 8.93477 22.08 7.96431 22.0162 7.18333C21.9511 6.38657 21.8159 5.7212 21.5078 5.11655C21.0045 4.1287 20.2013 3.32555 19.2135 2.82222C18.6088 2.51413 17.9434 2.3789 17.1467 2.3138C16.3657 2.24999 15.3952 2.24999 14.1633 2.25H14.13H7.33C4.70665 2.25 2.58 4.37665 2.58 7V8V8.75H4.08V8V7C4.08 5.20507 5.53508 3.75 7.33 3.75H14.13ZM3.33 20C2.77772 20 2.33 20.4477 2.33 21C2.33 21.5523 2.77772 22 3.33 22H3.34042C3.8927 22 4.34042 21.5523 4.34042 21C4.34042 20.4477 3.8927 20 3.34042 20H3.33ZM2.58 17C2.58 16.5858 2.91579 16.25 3.33 16.25C5.95335 16.25 8.08 18.3766 8.08 21C8.08 21.4142 7.74422 21.75 7.33 21.75C6.91579 21.75 6.58 21.4142 6.58 21C6.58 19.2051 5.12493 17.75 3.33 17.75C2.91579 17.75 2.58 17.4142 2.58 17ZM3.33 12.25C2.91579 12.25 2.58 12.5858 2.58 13C2.58 13.4142 2.91579 13.75 3.33 13.75C7.33407 13.75 10.58 16.9959 10.58 21C10.58 21.4142 10.9158 21.75 11.33 21.75C11.7442 21.75 12.08 21.4142 12.08 21C12.08 16.1675 8.16249 12.25 3.33 12.25Z" fill="#FF0000" />
+                </svg>
+            </span>
+            <h4 class="mt-1 text-orange-500 font-medium">Buy products</h4>
+            <p class="mt-1 text-sm text-gray-800 ">
+                Coming soon
+            </p>
+        </a>
 
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
+    </div>
+</div>
 
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                        <div class="flex items-center gap-4">
-                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                </svg>
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
+<div class="mt-6 pb-32">
+    <div class="w-full sm:w-full flex">
+        <div style="background-color: #EBF6EE; " class="flex items-center justify-between w-full p-4 rounded-lg">
+            <a href="#" class="flex items-center">
+                <h3 class="text-base font-medium">Earn rewards
+                    <p class="text-sm font-normal w-80 md:w-full mt-1">Invite your friends to pCash and earn big!</p>
+                </h3>
+            </a>
+            <button id="reward" class="flex items-center">
+                <img src="{{ asset('img/gift.svg')}}" alt="gift Image" class="ml-auto" />
+            </button>
         </div>
-    </body>
-</html>
+    </div>
+</div>
+
+
+
+<script>
+    document.getElementById('reward').addEventListener('click', function() {
+        // Get the parent div and hide it
+        var parentDiv = this.closest('.mt-6');
+        parentDiv.style.display = 'none';
+    });
+</script>
+@endsection

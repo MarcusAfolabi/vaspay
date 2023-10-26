@@ -1,0 +1,328 @@
+/** New hero css ***/
+.triangle {
+    fill: transparent;
+    stroke: rgba(108, 220, 172, 1);
+    stroke-width: 2px;
+}
+
+/* svg container */
+.triangle_container {
+    display: flex;
+    width: 48.61vw;
+    height: 41.67vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+
+}
+
+/* svg container */
+#svg_container {
+    height: 36.81vw;
+    width: 48.61vw
+}
+
+
+/* general image style */
+.man_first,
+.taxi_left,
+.sport_car,
+.shopping_bag,
+.woman_first {
+    position: absolute;
+    top: 6.52vw;
+    /* 90+padding top8px+3px */
+    left: 19.4vw;
+    width: 5.33vw;
+    height: 5.33vw;
+    background-color: rgba(235, 246, 238, 1);
+    padding: 0.67vw;
+    border-radius: 5.33vw;
+
+}
+
+/* taxi style */
+
+.taxi_left,
+.sport_car,
+.shopping_bag {
+    top: 33.023vw;
+    left: 4vw;
+}
+
+.sport_car,
+.shopping_bag,
+.woman_first {
+    opacity: 0;
+}
+
+/* piggy styles */
+.piggy_right {
+    background-color: transparent;
+    position: absolute;
+    left: 1vw;
+    top: -0.4vw;
+}
+
+.piggy_money {
+    background-color: transparent;
+    position: absolute;
+    opacity: 1;
+    left: 1vw;
+}
+
+
+.piggy_div,
+.pCash_logo {
+    position: absolute;
+    width: 5.33vw;
+    height: 5.33vw;
+    background-color: rgba(235, 246, 238, 1);
+    padding: 0.67vw;
+    border-radius: 5.33vw;
+    top: 33.023vw;
+    left: 33.0vw;
+    overflow: hidden;
+}
+
+.pCash_logo {
+    background-color: #fff;
+    opacity: 0;
+}
+
+
+
+/* arrow property */
+.arrow_under {
+    position: absolute;
+    opacity: 0;
+    top: 35.5vw;
+    /* 90+padding top8px+3px */
+    /* piggy position */
+    left: 27.33vw;
+    /* taxi position */
+    /* left:9.33vw;  */
+    background-color: transparent;
+    width: 5.70vw;
+    height: 3.33vw;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+
+
+/* Styles for screens with a maximum width of 768 pixels */
+@media screen and (max-width: 768px) {
+
+    .triangle_container {
+        display: flex;
+        width: 91.15vw;
+        height: 78.13vw;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: relative;
+
+    }
+
+    /* svg container */
+    #svg_container {
+        height: 69.02vw;
+        width: 91.15vw
+    }
+
+    /* general image style */
+    .man_first,
+    .taxi_left,
+    .sport_car,
+    .shopping_bag,
+    .woman_first {
+        position: absolute;
+        top: 12.24vw;
+        /* 90+padding top8px+3px */
+        left: 36.38vw;
+        width: 9.99vw;
+        height: 9.99vw;
+        background-color: rgba(235, 246, 238, 1);
+        padding: 1.26vw;
+        border-radius: 9.99vw;
+
+    }
+
+    /* taxi style */
+
+    .taxi_left,
+    .sport_car,
+    .shopping_bag {
+        top: 61.92vw;
+        left: 7.50vw;
+    }
+
+    /* piggy styles */
+    .piggy_right {
+        background-color: transparent;
+        position: absolute;
+        left: 1.88vw;
+        top: -0.75vw;
+        width: 5.33vw;
+        /* height: 2.63vw; */
+    }
+
+    .piggy_money {
+        background-color: transparent;
+        position: absolute;
+        opacity: 1;
+        left: 1.88vw;
+        width: 5.33vw;
+
+    }
+
+
+    .piggy_div,
+    .pCash_logo {
+        position: absolute;
+        width: 9.99vw;
+        height: 9.99vw;
+        background-color: rgba(235, 246, 238, 1);
+        padding: 1.26vw;
+        border-radius: 9.99vw;
+        top: 61.92vw;
+        left: 61.88vw;
+        overflow: hidden;
+    }
+
+
+    /* arrow property */
+    .arrow_under {
+        position: absolute;
+        opacity: 0;
+        top: 45.56vw;
+        /* 90+padding top8px+3px */
+        /* piggy position */
+        left: 47.24vw;
+        /* taxi position */
+        /* left:9.33vw;  */
+        background-color: transparent;
+        width: 10.69vw;
+        height: 6.24vw;
+        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+    }
+
+}
+
+/* Styles for screens with a minimum width of 769 pixels and a maximum width of 1024 pixels */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .triangle_container {
+        display: flex;
+        width: 68.36vw;
+        height: 58.60vw;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: relative;
+
+    }
+
+    /* svg container */
+    #svg_container {
+        height: 51.76vw;
+        width: 68.36vw
+    }
+
+    /* general image style */
+    .man_first,
+    .taxi_left,
+    .sport_car,
+    .shopping_bag,
+    .woman_first {
+        position: absolute;
+        top: 9.17vw;
+        /* 90+padding top8px+3px */
+        left: 27.28vw;
+        width: 7.50vw;
+        height: 7.50vw;
+        background-color: rgba(235, 246, 238, 1);
+        padding: 1.26vw;
+        border-radius: 7.50vw;
+
+    }
+
+    /* taxi style */
+
+    .taxi_left,
+    .sport_car,
+    .shopping_bag {
+        top: 46.44vw;
+        left: 5.62vw;
+    }
+
+    /* piggy styles */
+    .piggy_right {
+        background-color: transparent;
+        position: absolute;
+        left: 1.41vw;
+        top: -0.5625vw;
+        width: 3.99vw;
+        /* height: 2.63vw; */
+    }
+
+    .piggy_money {
+        background-color: transparent;
+        position: absolute;
+        opacity: 1;
+        left: 1.41vw;
+        width: 3.99vw;
+
+    }
+
+
+    .piggy_div,
+    .pCash_logo {
+        position: absolute;
+        width: 7.50vw;
+        height: 7.50vw;
+        background-color: rgba(235, 246, 238, 1);
+        padding: 0.95vw;
+        border-radius: 7.50vw;
+        top: 46.44vw;
+        left: 46.41vw;
+        overflow: hidden;
+    }
+
+
+    /* arrow property */
+    .arrow_under {
+        position: absolute;
+        opacity: 0;
+        top: 34.17vw;
+        /* 90+padding top8px+3px */
+        /* piggy position */
+        left: 35.43vw;
+        /* taxi position */
+        /* left:9.33vw;  */
+        background-color: transparent;
+        width: 8.02vw;
+        height: 4.68vw;
+        transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+    }
+}
+
+/* Styles for screens with a minimum width of 1025 pixels */
+@media screen and (min-width: 1025px) {
+
+    /* piggy styles */
+    .piggy_right {
+        background-color: transparent;
+        position: absolute;
+        left: 1.31vw;
+        top: -0.5625vw;
+        width: 3.2vw;
+        /* height: 2.63vw; */
+    }
+
+    .piggy_money {
+        background-color: transparent;
+        position: absolute;
+        opacity: 1;
+        left: 1.31vw;
+        width: 3.2vw;
+    }
+
+}
