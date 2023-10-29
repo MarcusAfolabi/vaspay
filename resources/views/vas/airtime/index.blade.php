@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', 'Buy Airtime ')
-@section('description', 'Buy airtime for all various network providers, both local and international')
-@section('keywords', 'save, invest, earn, interest, savings, low interest rate, loan, loan app, borrowing, app, mobile loan app, financial, finance, money, lending, credit, borrowing, repayment, financial management, personal finance')
+@section('description', 'Effortlessly recharge any mobile phone number. Buy airtime for all various network providers, both local and international')
+@section('keywords', 'recharge, phone, airtime, mtn, glo, network provider, recharge card, local airtime, international airtime, app, mobile loan app, financial, finance, money')
 @section('canonical', config('app.url') . '/airtime')
 @section('content')
 

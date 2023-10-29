@@ -16,8 +16,18 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-
+    'name' => env('APP_NAME'),
+    'mail' => env('APP_MAIL'),
+    'verification' => env('EMAIL_VERIFICATION'),
+    'site' => env('APP_SITE'),
+    
+    'apiKey' => env('MONNIFY_API_KEY'),
+    'secretUrl' => env('MONNIFY_SECRET_KEY'),
+    'loginUrl' => env('MONNIFY_SANDBOX_LOGIN_URL'),
+    'contractCode' => env('MONNIFY_CONTRACT_CODE'),
+    'initTransaction' => env('MONNIFY_INIT_TRANSACTION'),
+    'webhook' => env('MONNIFY_WEBHOOK'),
+    'virtualAccount' => env('MONNIFY_VIRTUAL_ACCOUNT'),
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -55,7 +65,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL'),
 
     'asset_url' => env('ASSET_URL'),
 

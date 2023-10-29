@@ -8,6 +8,7 @@ use App\Http\Controllers\CableController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AirtimeController;
 use App\Http\Controllers\ElectricityController;
+use App\Http\Controllers\MonnifyController;
  
 
 Route::get('/', function () {
@@ -55,4 +56,14 @@ Route::prefix('electricity.')->group(function () {
 
 Route::prefix('exam.')->group(function () {
     Route::get('/', [ExamController::class, 'index'])->name('index.exam');
+});
+
+Route::controller(MonnifyController::class)->group(function () {
+    Route::get('/fund_wallet', 'index')->name('fund.index');
+    Route::post('/fund/process', 'initiate')->name('fund.initiate');
+    Route::post('/fund/transfer', 'transferWallet')->name('transfer.initiate');
+    Route::post('/transfer/commission', 'transferCommission')->name('transfer.commission');
+    Route::get('/transaction-confirm', 'webhook');
+    Route::get('/customer-funds-history', 'fundHistory')->name('fund.history');
+
 });

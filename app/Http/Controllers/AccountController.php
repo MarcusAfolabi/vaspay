@@ -48,7 +48,6 @@ class AccountController extends Controller
             'name' => 'required|string',
             'phone' => 'required|numeric|unique:users',
             'email' => 'required|email|unique:users',
-            // 'password' => ['required', 'confirmed', Password::min(8)->mixedCase()],
             'password' => ['required', Password::min(8)->mixedCase()],
         ]);
 
@@ -71,36 +70,29 @@ class AccountController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(Account $account)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+  
     public function edit(Account $account)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+   
     public function update(Request $request, Account $account)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+  
     public function destroy(Account $account)
     {
-        //
+        $account->delete();
+        return redirect()->back()->with("status", "Deleted");
     }
 
     public function logout(Request $request)

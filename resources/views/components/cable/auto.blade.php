@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="sm:col-span-2 mt-4">
-                    <label for="email" class="block text-sm font-normal leading-6 text-purple-900">Phone Number</label>
+                    <label for="phone" class="block text-sm font-normal leading-6 text-purple-900">Phone Number</label>
                     <div class="mt-2">
                         <input type="tel" name="phone" id="phone" autocomplete="phone" class="block w-full border-0 rounded-md px-4 py-3 border-b border-transparent bg-purple-100 focus:border-purple-500 focus:ring-0 sm:text-md" placeholder="08052361689">
                     </div>
