@@ -20,7 +20,7 @@
         @endif
         <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div class="sm:col-span-2">
-                <label for="email" class="block sm:text-sm sm:font-semibold text-xs font-normal text-black">Email</label>
+                <label for="email" class="block sm:text-sm sm:font-semibold text-xs font-normal text-purple-600">Email</label>
                 <div class="mt-2">
                     <input type="email" name="email" id="email" required autocomplete="email" value="{{ old('email') }}" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter email">
 
