@@ -7,12 +7,57 @@ use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rules\Password;
 
 class AccountController extends Controller
 {
  
+    private function baseUrl()
+    {
+        return config('app.url');
+    }
+
+    private function header()
+    {
+        $token = Session::get('token');
+
+        $headers = [
+            // "Authorization" => "Bearer $token",
+            "Accept" => "application/json",
+            "Content-Type" => "application/json",
+        ];
+
+        return $headers;
+    } 
+
+    public function postLogin(Request $request)
+    {
+        $email = $request->get('email');
+        $password = $request->get('password');
+        
+        $body = [
+            'email' => $email,
+            'password' => $password,
+        ];
+        
+        dd($body);
+        $generate = $this->baseUrl() . '/login';
+        $response = Http::withHeaders($this->header())->post($generate, $body);
+
+        if ($response->successful()) {
+            $login = $response->json();
+            dd($login);
+        }
+
+        // if (Auth::attempt($authuser)) {
+        //     return redirect()->intended(route('dashboard'));
+        // } else {
+        //     return redirect(route('account.login'))->with('error', 'Hey, that detail is wrong. Try again');
+        // }
+    }
+
     public function index()
     {
         return view("account.profile.index");
@@ -26,22 +71,6 @@ class AccountController extends Controller
             return view("account.auth.login");
         }
     }
-
-    public function postLogin(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-        $authuser = $request->only('email', 'password');
-        if (Auth::attempt($authuser)) {
-            return redirect()->intended(route('dashboard'));
-        } else {
-            return redirect(route('account.login'))->with('error', 'Hey, that detail is wrong. Try again');
-        }
-    }
-
-
     public function postRegister(Request $request)
     {
         $request->validate([
