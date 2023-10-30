@@ -42,8 +42,8 @@ class AccountController extends Controller
             'password' => $password,
         ];
         
-        dd($body);
         $generate = $this->baseUrl() . '/login';
+        dd($generate);
         $response = Http::withHeaders($this->header())->post($generate, $body);
 
         if ($response->successful()) {
