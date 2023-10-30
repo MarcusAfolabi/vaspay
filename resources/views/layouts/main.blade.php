@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 
     @vite('resources/css/app.css')
- 
+
 
 </head>
 
@@ -90,30 +90,60 @@
                 function closeModal() {
                     console.log('closeModal() called');
                     document.getElementById('modal').classList.add('hidden');
-                } 
-            </script> 
+                }
+            </script>
             @endif
             @if(session('error'))
-            <div id="error" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                <div style="width: 320px;" class="flex items-center justify-center min-h-screen">
-                    <div class="bg-white rounded-lg p-8 flex flex-col w-full items-center justify-center">
-                        <img src="{{ asset('img/failed.svg') }}" class="justify-center mb-2" />
-                        <h2 class="font-medium text-lg text-black mb-6">Oh No!</h2>
-                        <div class="text-center justify-center w-full border-b border-gray-200 pb-6">
-                            <p style="font-size: 16px;" class="font-normal">{{ session('error') }}</p>
-                        </div>
-                        <div class="mt-6 sm:flex m:hidden grid grid-col-2 gap-3 justify-between items-center">
-                            <button class="w-full bg-red-600  text-white rounded-lg px-4 py-3" onclick="closeError()">Try again.</button>
+            <div id="notification-container" aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
+                <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+                    <!-- Notification panel, dynamically insert this into the live region when it needs to be displayed -->
+                    <div class="notification-panel max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <!-- Heroicon name: outline/check-circle -->
+                                    <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3 w-0 flex-1 pt-0.5">
+                                    <p class="text-sm font-medium text-gray-900">Successfully saved!</p>
+                                    <p class="mt-1 text-sm text-gray-500">{{ session('error') }}</p>
+                                </div>
+                                <div class="ml-4 flex-shrink-0 flex">
+                                    <button id="close-button" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        <span class="sr-only">Close</span>
+                                        <!-- Heroicon name: solid/x -->
+                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <script>
-                function closeError() {
-                    document.getElementById('error').classList.add('hidden');
-                } 
-            </script> 
-            @endif 
+                // Function to close the notification
+                function closeNotification() {
+                    const notificationContainer = document.getElementById('notification-container');
+                    notificationContainer.style.display = 'none';
+                }
+
+                // Close the notification when the close button is clicked
+                document.getElementById('close-button').addEventListener('click', () => {
+                    closeNotification();
+                });
+
+                // Automatically close the notification after 5 seconds
+                setTimeout(() => {
+                    closeNotification();
+                }, 5000); // 5000 milliseconds (5 seconds)
+            </script>
+
+            @endif
             <script src="{{ asset('js/vas.js') }}"></script>
 
         </div>
@@ -142,7 +172,7 @@
             modal.style.display = 'block';
         });
 
-        function showLoading(){
+        function showLoading() {
             document.getElementById('loading').classList.remove("hidden");
         }
     </script>
