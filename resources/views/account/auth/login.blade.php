@@ -85,7 +85,7 @@
                             </div>
                             <x-validation-status class="mt-2 text-[8px] text-red-600 text-center font-bold" role="alert" />
                         </div>
-                        <button class="bg-purple-500 text-white px-2.5 py-3 block w-full rounded-s-3xl mt-7" type="submit">Signup</button>
+                        <button class="bg-purple-600 text-white px-2.5 py-3 block w-full rounded-s-3xl mt-7" type="submit">Signup</button>
                     </div>
                 </div>
             </form>
