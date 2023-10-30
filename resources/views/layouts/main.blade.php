@@ -60,7 +60,7 @@
 
 </head>
 
-<body class="sm:bg-purple-50 bg-purple-50">
+<body class="sm:bg-purple-50 bg-purple-50 mt-6">
     <x-nav />
     <div class="flex ">
         <!-- Left container -->
