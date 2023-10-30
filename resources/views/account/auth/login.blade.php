@@ -9,7 +9,7 @@
     <div id="login-form" class="w-full bg-white rounded-3xl p-4">
         <!-- Login form here -->
         <div class="w-full bg-white rounded-3xl p-4">
-            <h1 class="mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose">Login to your account</h1>
+            <h1 class="text-purple-600 mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose">Login to your account</h1>
             <p class="md:px-28 mt-2 text-purple-400 text-sm">Securely login to your VasPay</p>
 
             <form method="POST" action="{{ route('account.login.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
@@ -39,14 +39,14 @@
                 </div>
             </form>
             <p class="mt-3 text-center md:w-full"><a href="{{ route('account.forgot-password') }}" class="text-purple-500">Forgot password?</a></p>
-            <p class="mt-3 text-center md:w-full">Don't have an account? <button class="text-purple-500" id="signup-button">Sign up</button>
+            <p class="mt-3 text-center md:w-full text-purple-400">Don't have an account? <button class="text-purple-500" id="signup-button">Sign up</button>
             </p>
         </div>
     </div>
     
     <div id="signup-form" class="w-full bg-white rounded-3xl p-4" style="display: none;">
         <div class="w-full bg-white rounded-3xl p-4">
-            <h1 class="mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose">Create a Secure Account</h1>
+            <h1 class="mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose text-purple-600">Create a Secure Account</h1>
             <p class="md:px-28 mt-2 text-purple-400 text-sm">Welcome to the future of intelligent and seamless value-added services.</p>
 
             <form method="POST" action="{{ route('account.register.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
