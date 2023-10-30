@@ -102,13 +102,13 @@
                             <div class="flex items-start">
                                 <div class="flex-shrink-0">
                                     <!-- Heroicon name: outline/check-circle -->
-                                    <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <svg class="h-6 w-6 text-red-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <div class="ml-3 w-0 flex-1 pt-0.5">
-                                    <p class="text-sm font-medium text-gray-900">Successfully saved!</p>
-                                    <p class="mt-1 text-sm text-gray-500">{{ session('error') }}</p>
+                                    <p class="text-sm font-medium text-red-900">Oops!</p>
+                                    <p class="mt-1 text-sm text-purple-600">{{ session('error') }}</p>
                                 </div>
                                 <div class="ml-4 flex-shrink-0 flex">
                                     <button id="close-button" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
