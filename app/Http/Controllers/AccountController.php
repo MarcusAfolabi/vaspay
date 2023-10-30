@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Wallet;
 use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,30 +34,72 @@ class AccountController extends Controller
         return $headers;
     } 
 
+    // public function postLogin(Request $request)
+    // {
+    //     $email = $request->get('email');
+    //     $password = $request->get('password');
+        
+    //     $body = [
+    //         'email' => $email,
+    //         'password' => $password,
+    //     ];
+        
+    //     $generate = $this->baseUrl() . '/login';
+    //     $response = Http::withHeaders($this->header())->post($generate, $body);
+    //     dd($response);
+
+    //     if ($response->successful()) {
+    //         $login = $response->json();
+    //         dd($login);
+    //     }
+
+    //     // if (Auth::attempt($authuser)) {
+    //     //     return redirect()->intended(route('dashboard'));
+    //     // } else {
+    //     //     return redirect(route('account.login'))->with('error', 'Hey, that detail is wrong. Try again');
+    //     // }
+    // }
     public function postLogin(Request $request)
     {
-        $email = $request->get('email');
-        $password = $request->get('password');
-        
-        $body = [
-            'email' => $email,
-            'password' => $password,
-        ];
-        
-        $generate = $this->baseUrl() . '/login';
-        $response = Http::withHeaders($this->header())->post($generate, $body);
-        dd($response);
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        $user = User::find(Auth::guard('user')->user()->id);
 
-        if ($response->successful()) {
-            $login = $response->json();
-            dd($login);
+        if (Auth::attempt($user)) {
+            $tokenn = bin2hex(openssl_random_pseudo_bytes(64));
+            $token = base64_encode($tokenn . $user->email);
+            $now = Carbon::now()->toDateTimeString();
+            User::where('email', $user->email)->update(['device_token' => $token, 'token_time' => $now]);
+
+            if ($user->status == 'inactive') {
+                return response()->json([
+                    "status" => 401,
+                    "message" => "Oops, your account has been deactivated! Please contact Admin via the chatbot."
+                ]);
+            }
+
+
+            $wallet = Wallet::where('user_id', $user->id)->first();
+            $balance = $wallet->balance;
+            $wallet_code = $wallet->code;
+
+            return response()->json([
+                "status" => 200,
+                "message" => "Successful",
+                "token" => $token,
+                "user" => $user,
+                "wallet" => $wallet,
+                "balance" => number_format($balance, 2),
+                "wallet_code" => $wallet_code,
+            ], 200);
+        } else {
+            return response()->json([
+                "status" => 401,
+                "message" => "Incorrect Email or Password!"
+            ]);
         }
-
-        // if (Auth::attempt($authuser)) {
-        //     return redirect()->intended(route('dashboard'));
-        // } else {
-        //     return redirect(route('account.login'))->with('error', 'Hey, that detail is wrong. Try again');
-        // }
     }
 
     public function index()
