@@ -53,9 +53,9 @@
                 @csrf
                 <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div class="sm:col-span-2">
-                        <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-purple-600">Full name</label>
+                        <label for="phone" class="block sm:text-sm sm:font-semibold text-xs font-normal text-purple-600">Firstname</label>
                         <div class="mt-2">
-                            <input type="text" name="name" id="name" required autocomplete="name" value="{{ old('name') }}" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-200 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter firstname lastname">
+                            <input type="text" name="name" id="name" required autocomplete="name" value="{{ old('name') }}" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-200 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter firstname">
 
                         </div>
                     </div>

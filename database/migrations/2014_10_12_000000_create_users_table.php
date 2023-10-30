@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('lastname')->nullable();
             $table->string('phone')->unique(); 
             $table->string('email')->unique();
+            $table->string('wallet_id')->unique();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->enum('role', ['customer', 'agent', 'admin'])->default('customer');
             $table->string('password');
