@@ -32,7 +32,7 @@ class AccountController extends Controller
             return redirect()->intended(route('dashboard.index'));
         }
     
-        return redirect()->route('login')->with('status', 'Hey, Sorry, I could not recognize your details.');
+        return redirect()->route('account.login')->with('error', 'Hey, Sorry, I could not recognize your details.');
     }
     
 
