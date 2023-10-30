@@ -142,7 +142,7 @@
                 // Automatically close the notification after 5 seconds
                 setTimeout(() => {
                     closeNotification();
-                }, 5000); // 5000 milliseconds (5 seconds)
+                }, 4000); // 5000 milliseconds (5 seconds)
             </script>
 
             @endif
