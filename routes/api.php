@@ -11,10 +11,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // Route::domain('api.domainname.com')->prefix('/api/v1')->middleware('auth:sanctum')->group(function () {
-    // Route::middleware('auth:sanctum')->group(function () {
-Route::middleware('auth:sanctum')->post('/api/v1', function (Request $request) {
+    Route::middleware('auth:sanctum')->group(function () {
+// Route::middleware('auth:sanctum')->post('/api/v1', function (Request $request) {
 
-    Route::post('/login', 'Api\AuthController@postLogin');
+    Route::post('/api/v1/login', 'Api\AuthController@postLogin');
     Route::post('/register', 'Api\AuthController@postRegister');
     Route::post('forgot-password', 'Api\AuthController@forgotPassword');
     Route::post('reset-password', 'Api\AuthController@resetPassword');
