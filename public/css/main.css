@@ -51,7 +51,7 @@ input[type="date"] {
 /* Change the appearance of the date input when focused */
 input[type="date"]:focus {
   outline: none;
-   box-shadow: #0DA75E;
+   box-shadow: #8b08be;
 }
 
 /* Change the appearance of the date input when a date is selected */
@@ -82,7 +82,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .switch-input:checked+.switch-label {
-  background-color: #0DA75E;
+  background-color: #8b08be;
   /* Changed color for checked state */
 }
 
@@ -193,7 +193,7 @@ textarea {
   content: "";
   height: 8px;
   width: 8px;
-  background-color: #0DA75E;
+  background-color: #8b08be;
   display: block;
   position: absolute;
   left: 50%;
@@ -214,12 +214,12 @@ textarea {
 }
 
 .text-purple-500 {
-  color: #0DA75E !important;
+  color: #8b08be !important;
 
 }
 
 .bg-purple-500 {
-  background-color: #0DA75E !important;
+  background-color: #8b08be !important;
 }
 
 .bg-gray-500 {
@@ -227,7 +227,7 @@ textarea {
 }
 
 .border-purple-500 {
-  color: #0DA75E !important;
+  color: #8b08be !important;
   /* border: none;   */
   outline: none;
 }
@@ -250,7 +250,7 @@ a {
 .checkbox-custom {
   appearance: none;
   background-color: #fff;
-  border: 1px solid #0DA75E;
+  border: 1px solid #8b08be;
   outline: 1px;
   height: 16px;
   width: 16px;
@@ -270,7 +270,7 @@ a {
   left: 0.30rem;
   width: 0.30rem;
   height: 0.60rem;
-  border: solid #0DA75E;
+  border: solid #8b08be;
   border-width: 0 0.1rem 0.1rem 0;
   transform: rotate(45deg);
 }
@@ -319,7 +319,7 @@ a {
   content: "";
   height: 8px;
   width: 8px;
-  background-color: #0DA75E;
+  background-color: #8b08be;
   display: block;
   position: absolute;
   left: 50%;
@@ -335,11 +335,11 @@ a {
 }
 
 .text-purple-500 {
-  color: #0DA75E;
+  color: #8b08be;
 }
 
 .text-purple-500 {
-  color: #0DA75E;
+  color: #8b08be;
 }
 
 .bg-gray-300 {
