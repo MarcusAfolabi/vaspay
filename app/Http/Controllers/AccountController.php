@@ -43,8 +43,8 @@ class AccountController extends Controller
         ];
         
         $generate = $this->baseUrl() . '/login';
-        dd($generate);
         $response = Http::withHeaders($this->header())->post($generate, $body);
+        dd($response);
 
         if ($response->successful()) {
             $login = $response->json();
