@@ -7,11 +7,14 @@ use App\Models\User;
 use App\Models\Wallet;
 use App\Models\Account;
 use App\Mail\WelcomeMail;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Notifications\NewUser;
+use App\Mail\PasswordResetMail;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Notification;
@@ -35,7 +38,7 @@ class AccountController extends Controller
             return redirect()->intended(route('dashboard'));
         }
 
-        return redirect()->route('account.login')->with('error', 'Hey, Sorry, I could not recognize your details.');
+        return redirect()->route('login')->with('errors', 'Hey, Sorry, I could not recognize your details.');
     }
 
 
@@ -81,14 +84,14 @@ class AccountController extends Controller
             'balance' => "0.00",
         ]);
 
-        // Notification::route('mail', [
-        //     config('app.mail') => 'Welcome a new user',
-        // ])->notify(new NewUser($user));
+        Notification::route('mail', [
+            config('app.mail') => 'Welcome a new user',
+        ])->notify(new NewUser($user));
 
         Mail::to($user->email)->send(new WelcomeMail($user));
 
         // You can customize the response or redirection here
-        return redirect(route('account.login'))->with('status', 'Your registration is successful. You can now log in.');
+        return redirect(route('login'))->with('status', 'Your registration is successful. You can now log in.');
     }
 
     public function forgotPassword(Request $request)
@@ -100,24 +103,80 @@ class AccountController extends Controller
         }
     }
 
-
-    public function show(Account $account)
+    public function forgotPasswordPost(Request $request)
     {
-        //
+         
+        $request->validate([
+            'email' => 'required|email|exists:users,email', // Check if the email exists in the 'email' column of the 'users' table
+        ]);
+
+        $email = $request->input('email');
+
+        $lastResetRequest = DB::table('password_reset_tokens')
+        ->where('email', $request->email)
+        ->orderBy('created_at', 'desc')
+        ->first();
+        
+        // dd($lastResetRequest);
+
+        if ($lastResetRequest && Carbon::parse($lastResetRequest->created_at)->addHour()->isFuture()) {
+            return redirect()->back()->withErrors(['email' => 'A password reset email has already been sent. Please wait before submitting another request.']);
+        }
+
+        $token = Str::random(64);
+
+        DB::table('password_reset_tokens')->insert([
+            'email' => $request->email,
+            'token' => $token,
+            'created_at' => Carbon::now()
+        ]); 
+
+        // Mail::send("mail.custom-password-reset", ['token' => $token, 'email' => $request->email], function ($message) use ($request) {
+        //     $message->to($request->email);
+        //     $message->subject("Reset Your Account Password");
+        // });
+        Mail::to($request->email)
+        ->send(new PasswordResetMail($email, $token));
+        
+
+        return redirect()->back()->with('status', 'I have sent you an email to reset your password')->withInput(['email' => $request->email]);
+    } 
+   
+    
+    public function resetPassword($token)
+    {
+        if (Auth::check()) {
+            return redirect(route('dashboard.index'));
+        }
+        return view('account.auth.reset-password', compact('token'));
     }
 
-
-    public function edit(Account $account)
+    public function resetPasswordPost(Request $request)
     {
-        //
+        if (Auth::check()) {
+            return redirect(route('dashboard.index'));
+        }
+        $request->validate([
+            'email' => "required|email|exists:users",
+            'password' => "required|string|min:8|confirmed",
+            'password' => "required|string|min:8",
+        ]);
+        $updatePassword = DB::table('password_reset_tokens')
+            ->where([
+                "email" => $request->email,
+                "token" => $request->token
+            ])->first();
+        if (!$updatePassword) {
+            return redirect(route('reset.password'))->with('status', "This is invalid request");
+        }
+
+        User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
+
+        DB::table('password_reset_tokens')->where(['email' => $request->email])->delete();
+
+        return redirect(route('login'))->with('status', 'Your new Password is ready to go!');
     }
-
-
-    public function update(Request $request, Account $account)
-    {
-        //
-    }
-
+ 
 
     public function destroy(Account $account)
     {
@@ -129,6 +188,6 @@ class AccountController extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect(route('account.login'))->with('status', 'Logout successful');
+        return redirect(route('login'))->with('status', 'Logout successful');
     }
 }

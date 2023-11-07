@@ -45,7 +45,7 @@
 </div>
 
 <div class="sm:grid grid-cols-2 gap-12 border-t border-gray-200 pt-8 pb-8">
-    <a href="{{ route('account.edit') }}">
+    <a href="{{ route('edit') }}">
         <div class="bg-white py-4 px-3 rounded-lg">
             <div class="flex justify-start">
                 <p class="flex-auto w-8"><img src="{{ asset('img/account/avatar.svg') }}"></p>
@@ -54,7 +54,7 @@
             </div>
         </div>
     </a>
-    <a href="{{ route('account.edit') }}">
+    <a href="{{ route('edit') }}">
         <div class="bg-white py-4 px-3 rounded-lg">
             <div class="flex justify-start">
                 <p class="flex-auto w-8"><img src="{{ asset('img/account/avatar.svg') }}"></p>
@@ -69,7 +69,7 @@
 
 <div class="sm:grid border-t border-gray-200 w-full pt-8 pb-8">
     <div class="flex justify-center gap-4  mt-8">
-        <a href="{{ route('account.logout') }}" type="submit" class="ring-1 ring-red-500 text-red-500 text-center block w-full rounded-lg px-4 py-3">Logout</a>
+        <a href="{{ route('logout') }}" type="submit" class="ring-1 ring-red-500 text-red-500 text-center block w-full rounded-lg px-4 py-3">Logout</a>
     </div>
 </div>
 

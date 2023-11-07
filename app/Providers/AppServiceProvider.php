@@ -29,5 +29,6 @@ class AppServiceProvider extends ServiceProvider
         Validator::replacer('allowed_domain', function ($message, $attribute, $rule, $parameters) {
             return str_replace(':attribute', $attribute, 'Your email is incorrect');
         });
+
     }
 }

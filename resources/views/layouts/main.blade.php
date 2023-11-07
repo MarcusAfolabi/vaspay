@@ -72,7 +72,7 @@
 
             @yield('content')
             @if(session('status'))
-            <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <!-- <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                 <div style="width: 320px;" class="flex items-center justify-center min-h-screen">
                     <div class="bg-white rounded-lg p-8 flex flex-col w-full items-center justify-center">
                         <img src="{{ asset('img/success.svg') }}" class="justify-center mb-2" />
@@ -85,37 +85,26 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                function closeModal() {
-                    console.log('closeModal() called');
-                    document.getElementById('modal').classList.add('hidden');
-                }
-            </script>
-            @endif
-            @if(session('error'))
+            </div> -->
             <div id="notification-container" aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
                 <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
-                    <!-- Notification panel, dynamically insert this into the live region when it needs to be displayed -->
                     <div class="notification-panel max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div class="p-4">
                             <div class="flex items-start">
                                 <div class="flex-shrink-0">
-                                    <!-- Heroicon name: outline/check-circle -->
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-purple-800">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                                     </svg>
+
 
                                 </div>
                                 <div class="ml-3 w-0 flex-1 pt-0.5">
-                                    <p class="text-sm font-medium text-red-500">Oops!</p>
-                                    <p class="mt-1 text-sm text-purple-600">{{ session('error') }}</p>
+                                    <p class="text-sm font-medium text-purple-900">Good!</p>
+                                    <p class="mt-1 text-sm text-purple-600">{{ session('status') }}</p>
                                 </div>
                                 <div class="ml-4 flex-shrink-0 flex">
                                     <button id="close-button" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         <span class="sr-only">Close</span>
-                                        <!-- Heroicon name: solid/x -->
                                         <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                             <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
                                         </svg>
@@ -126,26 +115,51 @@
                     </div>
                 </div>
             </div>
+            @endif
+        @if (count($errors) > 0)
 
+            <div id="notification-container" aria-live="assertive" class="fixed inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
+                <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+                    <div class="notification-panel max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div class="p-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-red-800">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                                    </svg>
+
+                                </div>
+                                <div class="ml-3 w-0 flex-1 pt-0.5">
+                                    <p class="text-sm font-medium text-red-800">Oops!</p>
+                                    <p class="mt-1 text-sm text-red-800">{{ session('errors') }}</p>
+                                </div>
+                                <div class="ml-4 flex-shrink-0 flex">
+                                    <button id="close-button" class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        <span class="sr-only">Close</span>
+                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
             <script>
-                // Function to close the notification
                 function closeNotification() {
                     const notificationContainer = document.getElementById('notification-container');
                     notificationContainer.style.display = 'none';
                 }
-
-                // Close the notification when the close button is clicked
                 document.getElementById('close-button').addEventListener('click', () => {
                     closeNotification();
                 });
 
-                // Automatically close the notification after 5 seconds
                 setTimeout(() => {
                     closeNotification();
-                }, 4000); // 5000 milliseconds (5 seconds)
+                }, 4000);
             </script>
-
-            @endif
             <script src="{{ asset('js/vas.js') }}"></script>
 
         </div>

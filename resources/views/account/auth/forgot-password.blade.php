@@ -9,13 +9,12 @@
     <a href="{{ url()->previous() }}" class="text-lg font-extrabold"> <- </a>
     <h1 class="mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose">Forgot Password</h1>
     <p class="md:px-28 mt-2 text-purple-400 text-sm">You forget password? Just enter your email for a reset link.</p>
-
-
-    <form method="POST" action="{{ route('account.login.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
+    <form method="POST" action="{{ route('forgot.password') }}" class="mx-auto mt-10 max-w sm:mt-10">
         @csrf
-        @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-purple-600">
-            {{ session('status') }}
+
+        @if (session('password_reset_timestamp') && Carbon\Carbon::parse(session('password_reset_timestamp'))->addHour()->isPast())
+        <div class="alert alert-info">
+            Your password reset link has expired. Please submit another request.
         </div>
         @endif
         <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -23,17 +22,13 @@
                 <label for="email" class="block sm:text-sm sm:font-semibold text-xs font-normal text-purple-600">Email</label>
                 <div class="mt-2">
                     <input type="email" name="email" id="email" required autocomplete="email" value="{{ old('email') }}" class="block w-full border-0 rounded-md px-4 py-3 h-12 border-b border-transparent bg-purple-100 focus:border-purple-600 focus:ring-0 sm:text-md" placeholder="Enter email">
-
                 </div>
             </div>
             <div class="sm:col-span-2">
                 <button class="bg-purple-500 text-white px-2.5 py-3 block w-full rounded-r-3xl mt-7" type="submit">Email Reset Link</button>
             </div>
-
         </div>
     </form>
-</div>
-
 </div>
 
 @endsection

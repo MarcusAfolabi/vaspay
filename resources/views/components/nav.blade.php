@@ -56,17 +56,17 @@
                     <img src="{{ asset('img/menu_icon/notification.svg') }}" alt="Notification Icon">
                 </a>
                 @if(Request::routeIs('account.*'))
-                <a href="{{ route('account.index') }}" class="ml-4 ">
+                <a href="{{ route('index') }}" class="ml-4 ">
                     <img src="{{ $loggedInUser['profile'] ?? asset('img/menu_icon/avater.svg') }}" class="w-10 h-10 rounded-full" alt="Avatar Icon">
                 </a>
-                <a href="{{ route('account.index') }}" class="ml-4" style="color: #0DA75E; border-bottom: 2px solid var(--primary, #0DA75E); padding: 12px 0px;">My account</a>
+                <a href="{{ route('index') }}" class="ml-4" style="color: #0DA75E; border-bottom: 2px solid var(--primary, #0DA75E); padding: 12px 0px;">My account</a>
                 @else
 
 
-                <a href="{{ route('account.index') }}" class="ml-4 text-gray-500 hover:text-gray-300">
+                <a href="{{ route('index') }}" class="ml-4 text-gray-500 hover:text-gray-300">
                     <img src="{{ $loggedInUser['profile'] ?? asset('img/menu_icon/avater.svg') }}" class="w-10 h-10 rounded-full" alt="Avatar Icon">
                 </a>
-                <a href="{{ route('account.index') }}" class="ml-4 text-medium text-sm text-gray-500 hover:text-purple-800">My account</a>
+                <a href="{{ route('index') }}" class="ml-4 text-medium text-sm text-gray-500 hover:text-purple-800">My account</a>
                 @endif
 
             </div>

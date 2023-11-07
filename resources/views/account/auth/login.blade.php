@@ -12,7 +12,7 @@
             <h1 class="text-purple-600 mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose">Login to your account</h1>
             <p class="md:px-28 mt-2 text-purple-400 text-sm">Securely login to your VasPay</p>
 
-            <form method="POST" action="{{ route('account.login.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
+            <form method="POST" action="{{ route('login.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
                 @csrf
                 <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div class="sm:col-span-2">
@@ -32,13 +32,12 @@
                                     <span id="passwordToggleText" class="text-purple-500 font-medium">Show</span>
                                 </button>
                             </div>
-                            <x-validation-status class="mt-2 text-[8px] text-red-600 text-center font-bold" role="alert" />
                         </div>
                         <button class="bg-purple-500 text-white px-2.5 py-3 block w-full rounded-r-3xl mt-7" type="submit">Log in</button>
                     </div>
                 </div>
             </form>
-            <p class="mt-3 text-center md:w-full"><a href="{{ route('account.forgot-password') }}" class="text-purple-500">Forgot password?</a></p>
+            <p class="mt-3 text-center md:w-full"><a href="{{ route('forgot-password') }}" class="text-purple-500">Forgot password?</a></p>
             <p class="mt-3 text-center md:w-full text-purple-400">Don't have an account? <button class="text-purple-500" id="signup-button">Sign up</button>
             </p>
         </div>
@@ -49,7 +48,7 @@
             <h1 class="mt-12 md:px-28 text-left sm:font-semibold font-medium text-xl sm:text-2xl leading-loose text-purple-600">Create a Secure Account</h1>
             <p class="md:px-28 mt-2 text-purple-400 text-sm">Welcome to the future of intelligent and seamless value-added services.</p>
 
-            <form method="POST" action="{{ route('account.register.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
+            <form method="POST" action="{{ route('register.post') }}" class="mx-auto mt-10 max-w sm:mt-10">
                 @csrf
                 <div class="grid grid-cols-1 md:px-28 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div class="sm:col-span-2">
@@ -83,13 +82,12 @@
                                     <span id="passwordToggleText1" class="text-purple-500 font-medium">Show</span>
                                 </button>
                             </div>
-                            <x-validation-status class="mt-2 text-[8px] text-red-600 text-center font-bold" role="alert" />
                         </div>
                         <button class="bg-purple-600 text-white px-2.5 py-3 block w-full rounded-s-3xl mt-7" type="submit">Signup</button>
                     </div>
                 </div>
             </form>
-            <p class="mt-3 text-center md:w-full"><a href="{{ route('account.forgot-password') }}" class="text-purple-500">Forgot password?</a></p>
+            <p class="mt-3 text-center md:w-full"><a href="{{ route('forgot-password') }}" class="text-purple-500">Forgot password?</a></p>
             <p class="mt-3 text-center md:w-full">Already have an account? <button id="login-button" class="text-purple-500">Login</button>
         </div>
     </div>

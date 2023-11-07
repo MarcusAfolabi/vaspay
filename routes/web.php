@@ -26,16 +26,18 @@ Route::get('/vas', function () {
 });
 
  
-Route::name('account.')->group(function () {
-    Route::get('/profile', [AccountController::class, 'index'])->name('index');
-    Route::get('/profile-edit', [AccountController::class, 'edit'])->name('edit');
-    Route::get('/profile-logout', [AccountController::class, 'logout'])->name('logout');
-    Route::get('login', [AccountController::class, 'login'])->name('login');
-    Route::get('register', [AccountController::class, 'register'])->name('register');
-    Route::get('forgot-password', [AccountController::class, 'forgotPassword'])->name('forgot-password');
-    Route::get('reset-password', [AccountController::class, 'resetPassword'])->name('reset-password');
-    Route::post('login', [AccountController::class, 'postLogin'])->name('login.post');
-    Route::post('register', [AccountController::class, 'postRegister'])->name('register.post');
+Route::controller(AccountController::class)->group(function () {
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'postLogin')->name('login.post');
+    Route::get('register', 'register')->name('register');   
+    Route::post('register', 'postRegister')->name('register.post');   
+    Route::get('forgot-password', 'forgotPassword')->name('forgot-password');
+    Route::post('/forgot-password_', 'forgotPasswordPost')->name('forgot.password');
+    Route::get('/reset-password/{token}', 'resetPassword')->name('reset.password');
+    Route::post('/reset-password', 'resetPasswordPost')->name('reset.password.post');
+    Route::get('/profile', 'index')->name('index');
+    Route::get('/profile-edit', 'edit')->name('edit');
+    Route::get('/profile-logout', 'logout')->name('logout');
 });
 
 Route::prefix('airtime.')->group(function () {
