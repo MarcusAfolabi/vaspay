@@ -7,8 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CableController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AirtimeController;
-use App\Http\Controllers\ElectricityController;
+use App\Http\Controllers\API\KeyController;
 use App\Http\Controllers\MonnifyController;
+use App\Http\Controllers\ElectricityController;
  
 
 Route::get('/', function () {
@@ -26,6 +27,11 @@ Route::get('/vas', function () {
 });
 
  
+Route::controller(KeyController::class)->group(function () {
+    Route::get('/verification', 'index')->name('verify.agent');
+    Route::post('/verification/agent', 'loginAgent')->name('agent.login');
+});
+
 Route::controller(AccountController::class)->group(function () {
     Route::get('login', 'login')->name('login');
     Route::post('login', 'postLogin')->name('login.post');

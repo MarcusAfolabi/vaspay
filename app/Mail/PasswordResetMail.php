@@ -30,14 +30,7 @@ class PasswordResetMail extends Mailable
         );
     }
 
-    
-    // public function content(): Content
-    // {
-    //     return new Content(
-    //         markdown: 'mail.password-reset-mail',
-    //     );
-    // }
-
+   
     public function build()
     {
         return $this

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Key extends Model
 {
     use HasFactory;
-    protected $fillable = ['email','api_key'];
+    protected $fillable = ['email', 'live_key', 'test_key', 'webhook', 'user_id', 'token'];
     protected $table = 'keys';
-
 }

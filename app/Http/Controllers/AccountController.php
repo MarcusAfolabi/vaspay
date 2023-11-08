@@ -85,7 +85,7 @@ class AccountController extends Controller
         ]);
 
         Notification::route('mail', [
-            config('app.mail') => 'Welcome a new user',
+            config('app.address') => 'Welcome a new user',
         ])->notify(new NewUser($user));
 
         Mail::to($user->email)->send(new WelcomeMail($user));
@@ -131,10 +131,7 @@ class AccountController extends Controller
             'created_at' => Carbon::now()
         ]); 
 
-        // Mail::send("mail.custom-password-reset", ['token' => $token, 'email' => $request->email], function ($message) use ($request) {
-        //     $message->to($request->email);
-        //     $message->subject("Reset Your Account Password");
-        // });
+      
         Mail::to($request->email)
         ->send(new PasswordResetMail($email, $token));
         

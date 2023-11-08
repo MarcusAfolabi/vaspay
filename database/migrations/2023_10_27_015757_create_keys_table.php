@@ -11,8 +11,12 @@ return new class extends Migration
     {
         Schema::create('keys', function (Blueprint $table) {
             $table->id();
-            $table->string('api_key');
-            $table->string('email');
+            $table->string('user_id')->nullable();
+            $table->string('live_key')->nullable();
+            $table->string('test_key')->nullable();
+            $table->string('email')->nullable();
+            $table->text('token')->nullable();
+            $table->text('webhook')->nullable();
             $table->timestamps();
         });
     }

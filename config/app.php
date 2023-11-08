@@ -18,6 +18,7 @@ return [
 
     'name' => env('APP_NAME'),
     'mail' => env('APP_MAIL'),
+    'address' => env('MAIL_FROM_ADDRESS'),
     'verification' => env('EMAIL_VERIFICATION'),
     'site' => env('APP_SITE'),
     
