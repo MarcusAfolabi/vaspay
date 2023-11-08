@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Key;
 use App\Models\Wallet;
 use App\Models\FundRequest;
-use Illuminate\Support\Str;
+use Illuminate\Support\Str; 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\AgentAccount;
@@ -30,9 +30,9 @@ class MonnifyController extends Controller
 
     private function header()
     {
-
-        $apiKey = 'MK_TEST_338GVRH5Y0';
-        $secretKey = 'D51TKN9MBF17YVALJX56XW8UXBTFKRT4';
+        
+        $apiKey = config('app.apiKey');
+        $secretKey = config('app.secretUrl');
 
         $credentials = "{$apiKey}:{$secretKey}";
         $base64Credentials = base64_encode($credentials);
@@ -55,15 +55,15 @@ class MonnifyController extends Controller
     }
     public function index(Request $request)
     {
-        $user = auth()->user();
+        $user = auth()->user(); 
 
-
+       
         // dd($body);
         $funds = FundRequest::select('user_id', 'transactionReference', 'amount', 'status', 'created_at')->where('user_id', $user->id)->latest()->paginate(10);
 
         if (auth()->user()->role == 'agent') {
-            $body = [
-                'email' => $user->email,
+             $body = [
+            'email' => $user->email,
             ];
             $user = AgentAccount::where('email', $user->email)->first();
             $userID = $user->agentId;
@@ -71,7 +71,7 @@ class MonnifyController extends Controller
 
             $body2 = [
                 // 'user_id' => "14743",
-                'user_id' => $userID,
+                'user_id' => $userID, 
             ];
             // Balance
             $walletBal = $this->baseUrl() . '/fetch/agentAccount';
@@ -109,12 +109,12 @@ class MonnifyController extends Controller
             return redirect()->back()->with('status', 'Invalid Wallet ID');
         }
 
-        // check if the user wallet balance is sufficient
-        $user = auth()->user();
-        $userBalance = $user->wallet->balance;
-        if ($userBalance < $amount) {
-            return redirect()->back()->with('status', 'Insufficient fund. Go and fund your wallet, please.');
-        }
+         // check if the user wallet balance is sufficient
+         $user = auth()->user();
+         $userBalance = $user->wallet->balance;
+         if ($userBalance < $amount) {
+             return redirect()->back()->with('status', 'Insufficient fund. Go and fund your wallet, please.');
+         }
 
         //then save into fundrequest
         $fund = new FundRequest();
@@ -132,13 +132,13 @@ class MonnifyController extends Controller
             $userWallet->balance -= $amount;
             $userWallet->save();
         }
-        // credit the wallet_id
-        $wallet = Wallet::where('wallet_id', $walletId)->first();
-        if ($wallet) {
-            $wallet->balance += $amount;
-            $wallet->save();
-        }
-        return redirect()->back()->with('status', 'Transaction successfull');
+         // credit the wallet_id
+         $wallet = Wallet::where('wallet_id', $walletId)->first();
+         if ($wallet) {
+             $wallet->balance += $amount;
+             $wallet->save();
+         }
+         return redirect()->back()->with('status', 'Transaction successfull');
     }
 
     public function transferCommission(Request $request)
@@ -148,14 +148,14 @@ class MonnifyController extends Controller
         $user_id = auth()->user()->id;
         $email = auth()->user()->email;
 
-        // check if the user commission amount is sufficient
-        $user = auth()->user();
-        $userBalance = $user->wallet->commission;
-        if ($userBalance < $amount) {
-            return redirect()->back()->with('status', 'Insufficient commission. Do more transaction, please.');
-        }
+         // check if the user commission amount is sufficient
+         $user = auth()->user();
+         $userBalance = $user->wallet->commission;
+         if ($userBalance < $amount) {
+             return redirect()->back()->with('status', 'Insufficient commission. Do more transaction, please.');
+         }
 
-        //then save into fundrequest
+          //then save into fundrequest
         $fund = new FundRequest();
         $fund->amount = $amount;
         $fund->transactionReference = $transactionReference;
@@ -165,20 +165,21 @@ class MonnifyController extends Controller
         $fund->status = '1'; // successful
         $fund->save();
 
-        // debit the commission
-        $userWallet = Wallet::where('user_id', $user_id)->first();
-        if ($userWallet) {
-            $userWallet->commission -= $amount;
-            $userWallet->save();
-        }
+         // debit the commission
+         $userWallet = Wallet::where('user_id', $user_id)->first();
+         if ($userWallet) {
+             $userWallet->commission -= $amount;
+             $userWallet->save();
+         }
 
-        // credit the wallet_id
-        $wallet = Wallet::where('wallet_id', auth()->user()->wallet_id)->first();
-        if ($wallet) {
-            $wallet->balance += $amount;
-            $wallet->save();
-        }
-        return redirect()->back()->with('status', 'Transaction successfull');
+          // credit the wallet_id
+          $wallet = Wallet::where('wallet_id', auth()->user()->wallet_id)->first();
+          if ($wallet) {
+              $wallet->balance += $amount;
+              $wallet->save();
+          }
+          return redirect()->back()->with('status', 'Transaction successfull');
+
     }
 
     public function initiate(Request $request)
@@ -189,8 +190,8 @@ class MonnifyController extends Controller
         $amount = $request->get('amount');
         $consumer_id = $request->get('consumer_id');
 
-        $apiKey = 'MK_TEST_338GVRH5Y0';
-        $secretKey = 'D51TKN9MBF17YVALJX56XW8UXBTFKRT4';
+        $apiKey = config('app.apiKey');
+        $secretKey = config('app.secretUrl');
 
         $credentials = "{$apiKey}:{$secretKey}";
         $base64Credentials = base64_encode($credentials);
@@ -203,7 +204,8 @@ class MonnifyController extends Controller
             "Content-Type" => "application/json",
         ];
         //Generate Access token
-        $tok = Http::withHeaders($headers)->post('https://sandbox.monnify.com/api/v1/auth/login');
+        $login = config('app.loginUrl');
+        $tok = Http::withHeaders($headers)->post($login);
 
         $bearerToken = $tok->json()['responseBody']['accessToken'];
 
@@ -213,7 +215,7 @@ class MonnifyController extends Controller
             "Content-Type" => "application/json",
         ];
 
-        $paymentReference = Str::random(20);
+       $paymentReference = Str::random(20);
 
         $body = [
             "customerName" => $name,
@@ -222,13 +224,13 @@ class MonnifyController extends Controller
             "paymentReference" => $paymentReference,
             "paymentDescription" => "Fund Wallet",
             "currencyCode" => "NGN",
-            "contractCode" => "9624075433",
+            "contractCode" => config('app.contractCode'),
             "redirectUrl" => config('app.site') . "/transaction-confirm",
             "paymentMethods" => ["CARD", "ACCOUNT_TRANSFER", "USSD"],
         ];
-        // dd($body);
+        // dd($body);   
         try {
-            $process = 'https://sandbox.monnify.com/api/v1/merchant/transactions/init-transaction';
+            $process = config('app.initTransaction');
             $response = Http::withHeaders($headers2)->post($process, $body);
             if ($response['responseCode'] == 0) {
                 $checkoutUrl = $response->json()['responseBody']['checkoutUrl'];
@@ -254,8 +256,8 @@ class MonnifyController extends Controller
     public function webhook(Request $request)
     {
         $paymentReference = $request->get('paymentReference');
-        $apiKey = 'MK_TEST_338GVRH5Y0';
-        $secretKey = 'D51TKN9MBF17YVALJX56XW8UXBTFKRT4';
+        $apiKey = config('app.apiKey');
+        $secretKey = config('app.secretUrl');
 
         $credentials = "{$apiKey}:{$secretKey}";
         $base64Credentials = base64_encode($credentials);
@@ -269,28 +271,29 @@ class MonnifyController extends Controller
         ];
 
         //Generate Access token
-        $tok = Http::withHeaders($headers)->post('https://sandbox.monnify.com/api/v1/auth/login');
+        $login = config('app.loginUrl');
+        $tok = Http::withHeaders($headers)->post($login);
         $bearerToken = $tok->json()['responseBody']['accessToken'];
 
         $headers2 = [
             "Authorization" => "Bearer $bearerToken",
             "Accept" => "application/json",
             "Content-Type" => "application/json",
-        ];
+        ]; 
         $paymentReference = $request->input('paymentReference');
 
         $body = [
             "paymentReference" => $paymentReference
         ];
 
-        $webhook = 'https://sandbox.monnify.com/api/v1/transactions/search';
+        $webhook = config('app.webhook');
 
         try {
             $response = Http::withHeaders($headers2)->get($webhook, $body);
 
-            if ($response['requestSuccessful'] == 'true' && $response['responseMessage'] == 'success') {
-                $data = $response->json();
-                //info($data);
+            if ($response['requestSuccessful'] == 'true' && $response['responseMessage'] == 'success' && $response['responseBody']['content']['0']['completed'] == true && $response['responseBody']['content']['0']['paymentStatus'] == 'PAID' ) {
+                $data = $response->json(); 
+                info($data);
 
                 // Update the fund request to 1
                 $update = FundRequest::where('paymentReference', $paymentReference)->where('status', '0')->first();
@@ -308,8 +311,7 @@ class MonnifyController extends Controller
                     $userWallet->save();
                 }
                 $funds = FundRequest::where('user_id', $user_id)->latest()->paginate(10);
-                // return redirect()->away('https://honourworld.test/fund_wallet', compact('funds'));
-                return view('dashboard.index', compact('funds'));
+                return view('dashboard.agent.wallet.index', compact('funds'));
             }
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
@@ -326,7 +328,8 @@ class MonnifyController extends Controller
                 ->paginate(20);
         } else {
             $funds = FundRequest::latest()->paginate(20);
+            
         }
-        return view("dashboard.index", compact('funds'));
+        return view("dashboard.agent.wallet.index", compact('funds'));
     }
 }
